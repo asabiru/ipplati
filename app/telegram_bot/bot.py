@@ -110,6 +110,10 @@ def _main_menu_markup() -> dict:
                 {"text": "Последние сделки", "callback_data": "deals:month"},
             ],
             [
+                {"text": "КУДиР за месяц", "callback_data": "kudir:month"},
+                {"text": "КУДиР по датам", "callback_data": "kudir:custom"},
+            ],
+            [
                 {"text": "Ручной платеж", "callback_data": "manual:start"},
             ],
         ]
@@ -229,12 +233,35 @@ def _handle_help(context: BotContext, chat_id: int) -> None:
     _send_menu_message(context, chat_id, format_help())
 
 
+def _handle_kudir(context: BotContext, chat_id: int) -> None:
+    date_from, date_to = _period_month()
+    _send_kudir(context, chat_id, date_from=date_from, date_to=date_to)
+
+
+def _send_kudir(
+    context: BotContext,
+    chat_id: int,
+    *,
+    date_from: date | None = None,
+    date_to: date | None = None,
+) -> None:
+    xlsx_bytes, filename = context.dashboard.get_kudir_xlsx(date_from=date_from, date_to=date_to)
+    if date_from and date_to:
+        period = f"{date_from.isoformat()} — {date_to.isoformat()}"
+    else:
+        period = "все время"
+    caption = f"<b>КУДиР</b>\nПериод: {period}"
+    context.telegram.send_document(chat_id, xlsx_bytes, filename, caption=caption)
+    _send_menu_message(context, chat_id, "Файл КУДиР отправлен.")
+
+
 COMMAND_HANDLERS = {
     "/start": _handle_help,
     "/help": _handle_help,
     "/report": _handle_report,
     "/deals": _handle_deals,
     "/returns": _handle_returns,
+    "/kudir": _handle_kudir,
 }
 
 
@@ -253,6 +280,8 @@ def _process_pending_range(context: BotContext, chat_id: int, text: str) -> bool
         _send_summary(context, chat_id, date_from=date_from, date_to=date_to)
     elif pending.mode == "returns":
         _send_returns(context, chat_id, date_from=date_from, date_to=date_to)
+    elif pending.mode == "kudir":
+        _send_kudir(context, chat_id, date_from=date_from, date_to=date_to)
     else:
         _send_deals(context, chat_id, date_from=date_from, date_to=date_to)
 
@@ -307,6 +336,12 @@ def _handle_callback(context: BotContext, callback_query: dict) -> None:
     elif data == "deals:month":
         date_from, date_to = _period_month()
         _send_deals(context, chat_id, date_from=date_from, date_to=date_to)
+    elif data == "kudir:month":
+        date_from, date_to = _period_month()
+        _send_kudir(context, chat_id, date_from=date_from, date_to=date_to)
+    elif data == "kudir:custom":
+        PENDING_RANGE_REQUESTS[chat_id] = PendingRangeRequest(mode="kudir")
+        _send_menu_message(context, chat_id, format_custom_date_prompt())
     elif data == "manual:start":
         PENDING_MANUAL_REQUESTS.pop(chat_id, None)
         _send_manual_start(context, chat_id)
