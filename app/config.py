@@ -49,6 +49,14 @@ class Settings(BaseSettings):
     alfa_auto_sync_min_interval_seconds: int = 180
     alfa_auto_sync_poll_interval_seconds: int = 300
 
+    kudir_ip_name: str = "ИП Поляков Александр Александрович"
+    kudir_inn: str = "631944033067"
+    kudir_tax_year: int = 2026
+    kudir_tax_system: str = "УСН (доходы − расходы)"
+    kudir_income_basis: str = "Доход от оказания посреднических услуг"
+    kudir_expense_third_party_basis: str = "Расходы на оплату услуг третьих лиц, связанных с осуществлением посреднической деятельности"
+    kudir_expense_bank_fee_basis: str = "Банковская комиссия за расчетно-кассовое обслуживание (пакет переводов физическим лицам)"
+    kudir_artifacts_dir: str = "artifacts/kudir"
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

@@ -163,6 +163,7 @@ def format_help() -> str:
             "/report - общий отчет",
             "/deals - последние сделки",
             "/returns - возвраты",
+            "/kudir - КУДиР (Excel)",
             "/help - список команд",
         ]
     )

@@ -70,3 +70,23 @@ class DashboardApiClient:
             response = client.post(f"{self.base_url}/manual/deals", json=payload)
         response.raise_for_status()
         return ManualDealCreateOut.model_validate(response.json())
+
+    def get_kudir_xlsx(
+        self,
+        *,
+        date_from: date | None = None,
+        date_to: date | None = None,
+    ) -> tuple[bytes, str]:
+        params: dict[str, str] = {}
+        if date_from is not None:
+            params["date_from"] = date_from.isoformat()
+        if date_to is not None:
+            params["date_to"] = date_to.isoformat()
+        with httpx.Client(timeout=self.timeout_seconds) as client:
+            response = client.get(f"{self.base_url}/reports/kudir/xlsx", params=params)
+        response.raise_for_status()
+        content_disposition = response.headers.get("content-disposition", "")
+        filename = "kudir.xlsx"
+        if 'filename="' in content_disposition:
+            filename = content_disposition.split('filename="')[1].rstrip('"')
+        return response.content, filename

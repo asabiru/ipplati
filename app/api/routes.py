@@ -2,7 +2,7 @@ from datetime import UTC, date
 from decimal import Decimal
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -47,6 +47,7 @@ from app.services.alfa_auth import (
 )
 from app.services.alfa_auto_sync import auto_sync_recent_alfa
 from app.services.classification import classify_all_deals, classify_deal_status, link_bank_return_transactions
+from app.services.kudir import generate_kudir_xlsx_for_period
 from app.services.auto_sync import auto_sync_recent_sber
 from app.services.matching import run_matching
 from app.services.receipt_matching import reconcile_receipts
@@ -638,4 +639,20 @@ def alfa_pull_statement(
         imported=imported,
         total_transactions=total_transactions,
         raw=raw,
+    )
+
+
+@router.get("/reports/kudir/xlsx")
+def kudir_xlsx(
+    session: Session = Depends(get_session),
+    date_from: date | None = Query(default=None),
+    date_to: date | None = Query(default=None),
+) -> StreamingResponse:
+    if date_from and date_to and date_from > date_to:
+        raise HTTPException(status_code=400, detail="date_from must be less than or equal to date_to")
+    buf, filename = generate_kudir_xlsx_for_period(session, date_from=date_from, date_to=date_to)
+    return StreamingResponse(
+        buf,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
