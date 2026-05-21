@@ -171,8 +171,7 @@ def _write_data_rows(ws, rows: list[KudirRow], start_row: int = 2) -> None:
         cell_num.alignment = Alignment(horizontal="center")
 
         cell_date = ws[f"G{excel_row}"]
-        cell_date.value = row.operation_date
-        cell_date.number_format = "DD.MM.YYYY"
+        cell_date.value = row.operation_date.strftime("%d.%m.%Y")
         cell_date.font = date_font
         cell_date.border = thin_border
         cell_date.alignment = Alignment(horizontal="center")

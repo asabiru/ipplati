@@ -111,6 +111,7 @@ def _main_menu_markup() -> dict:
             ],
             [
                 {"text": "КУДиР за месяц", "callback_data": "kudir:month"},
+                {"text": "КУДиР всё время", "callback_data": "kudir:all"},
                 {"text": "КУДиР по датам", "callback_data": "kudir:custom"},
             ],
             [
@@ -234,8 +235,7 @@ def _handle_help(context: BotContext, chat_id: int) -> None:
 
 
 def _handle_kudir(context: BotContext, chat_id: int) -> None:
-    date_from, date_to = _period_month()
-    _send_kudir(context, chat_id, date_from=date_from, date_to=date_to)
+    _send_kudir(context, chat_id)
 
 
 def _send_kudir(
@@ -339,6 +339,8 @@ def _handle_callback(context: BotContext, callback_query: dict) -> None:
     elif data == "kudir:month":
         date_from, date_to = _period_month()
         _send_kudir(context, chat_id, date_from=date_from, date_to=date_to)
+    elif data == "kudir:all":
+        _send_kudir(context, chat_id)
     elif data == "kudir:custom":
         PENDING_RANGE_REQUESTS[chat_id] = PendingRangeRequest(mode="kudir")
         _send_menu_message(context, chat_id, format_custom_date_prompt())

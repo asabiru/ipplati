@@ -29,9 +29,9 @@ class Settings(BaseSettings):
     sber_auto_sync_min_interval_seconds: int = 180
     sber_auto_sync_poll_interval_seconds: int = 300
 
-    kudir_ip_name: str = ""
-    kudir_inn: str = ""
-    kudir_tax_year: int = 0
+    kudir_ip_name: str = "ИП Поляков Александр Александрович"
+    kudir_inn: str = "631944033067"
+    kudir_tax_year: int = 2026
     kudir_tax_system: str = "УСН (доходы − расходы)"
     kudir_income_basis: str = "Доход от оказания посреднических услуг"
     kudir_expense_third_party_basis: str = "Расходы на оплату услуг третьих лиц, связанных с осуществлением посреднической деятельности"
