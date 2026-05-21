@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\stasb\Desktop\автоматика ип\app\telegram_bot\cli.py", line 60, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\stasb\Desktop\автоматика ип\app\telegram_bot\cli.py", line 52, in main
+    run_polling()
+  File "C:\Users\stasb\Desktop\автоматика ип\app\telegram_bot\bot.py", line 269, in run_polling
+    updates = context.telegram.get_updates(offset=offset)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stasb\Desktop\автоматика ип\app\telegram_bot\client.py", line 32, in get_updates
+    response.raise_for_status()
+  File "C:\Users\stasb\AppData\Local\Programs\Python\Python312\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '409 Conflict' for url 'https://api.telegram.org/bot8787147676:AAHtNkgGjC-LihulrahUGMKTmHIcVrtoxr8/getUpdates?timeout=30'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409

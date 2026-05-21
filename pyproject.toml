@@ -1,0 +1,24 @@
+[project]
+name = "ip-automation"
+version = "0.1.0"
+description = "Automation service for Wallet, Sber, and OFD reconciliation."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cryptography>=46.0.0",
+    "fastapi>=0.116.1",
+    "httpx>=0.28.1",
+    "pillow>=11.3.0",
+    "playwright>=1.54.0",
+    "pydantic-settings>=2.11.0",
+    "pywinauto>=0.6.9",
+    "sqlalchemy>=2.0.44",
+    "uvicorn>=0.38.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]

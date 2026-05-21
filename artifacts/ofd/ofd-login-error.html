@@ -1,0 +1,2298 @@
+<!DOCTYPE html><html lang="ru"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <title>Астрал авторизация</title> <link rel="shortcut icon" href="/favicons/favicon.ico"> <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"> <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png"> <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png"> <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png"> <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png"> <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png"> <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png"> <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-167x167.png"> <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png"> <link rel="apple-touch-icon" sizes="1024x1024" href="/favicons/apple-touch-icon-1024x1024.png"> <link rel="icon" type="image/png" sizes="228x228" href="/favicons/coast-228x228.png"> <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/dNfi_jsbkQb4Hbw7F1b82Uia/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-uy4HaBJFl34xi1hBVZsv8nVOvZqDSlu23xgD3Z2i19N6WUwLfrsOg8gjB4/tCbKV"></script><script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script> window.loadRecaptcha = function() {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://www.google.com/recaptcha/api.js?render=6LdI074UAAAAAFV8E3_eNoMTcGHeXysP39vmbL8x';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      };
+
+      window.loadSmartCaptcha = function() {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onSmartCaptchaLoad';
+          script.defer = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }; </script> <script type="module" src="/runtime~main.ad966efe5edddcca3bf0.bundle.js"></script><script type="module" src="/modules.7fa9e641b8bba5fd2745.js"></script><script type="module" src="/react.1e34851e2faa87287d3b.js"></script><script type="module" src="/main.ad966efe5edddcca3bf0.bundle.js"></script><link href="/styles/modules.ad966efe5edddcca3bf0.css" rel="stylesheet"><link as="font" crossorigin="anonymous" href="/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf" rel="preload"><script src="https://www.google.com/recaptcha/api.js?render=6LdI074UAAAAAFV8E3_eNoMTcGHeXysP39vmbL8x"></script><style type="text/css">/* add css styles here (optional) */
+
+.styles_react-code-input-container__tpiKG {
+  position: relative;
+}
+
+.styles_react-code-input__CRulA > input {
+  border: solid 1px #a8adb7;
+  border-right: none;
+  font-family: 'Lato';
+  font-size: 20px;
+  color: #525461;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: initial;
+}
+
+.styles_react-code-input__CRulA > input:last-child {
+  border-right: solid 1px #a8adb7;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.styles_react-code-input__CRulA > input:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.styles_react-code-input__CRulA > input:focus {
+  outline: none;
+  border: 1px solid #006fff;
+  caret-color: #006fff;
+}
+
+.styles_react-code-input__CRulA > input:focus + input {
+  border-left: none;
+}
+
+.styles_loading__Z65VQ {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.styles_blur__19vMK {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.5;
+  filter: blur(0.5px);
+  transition: opacity 0.3s;
+}
+
+.styles_title__1cca0 {
+  margin: 0;
+  height: 20px;
+  padding-bottom: 10px;
+}
+
+.styles_spin__6y_8G {
+  display: inline-block;
+  animation: styles_loadingCircle__293ky 1s infinite linear;
+}
+
+@keyframes styles_loadingCircle__293ky {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypographyroot-0-1-19 {
+  margin: 0;
+}
+.MuiTypographybody2-0-1-20 {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.MuiTypographybody1-0-1-21 {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.4285714285714286rem;
+}
+.MuiTypographycaption-0-1-22 {
+  font-size: 0.8571428571428571rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.1428571428571428rem;
+}
+.MuiTypographybutton-0-1-23 {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.MuiTypographyh1-0-1-24 {
+  font-size: 2.5714285714285716rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 700;
+  line-height: 3.5714285714285716rem;
+}
+.MuiTypographyh2-0-1-25 {
+  font-size: 1.7142857142857142rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.MuiTypographyh3-0-1-26 {
+  font-size: 1.2857142857142858rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 700;
+  line-height: 1.7857142857142858rem;
+}
+.MuiTypographyh4-0-1-27 {
+  font-size: 2.4285714285714284rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.235;
+}
+.MuiTypographyh5-0-1-28 {
+  font-size: 1.7142857142857142rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.334;
+}
+.MuiTypographyh6-0-1-29 {
+  font-size: 1.4285714285714286rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.MuiTypographysubtitle1-0-1-30 {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 700;
+  line-height: 1.3571428571428572rem;
+}
+.MuiTypographysubtitle2-0-1-31 {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.MuiTypographyoverline-0-1-32 {
+  font-size: 0.8571428571428571rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.MuiTypographysrOnly-0-1-33 {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypographyalignLeft-0-1-34 {
+  text-align: left;
+}
+.MuiTypographyalignCenter-0-1-35 {
+  text-align: center;
+}
+.MuiTypographyalignRight-0-1-36 {
+  text-align: right;
+}
+.MuiTypographyalignJustify-0-1-37 {
+  text-align: justify;
+}
+.MuiTypographynoWrap-0-1-38 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypographygutterBottom-0-1-39 {
+  margin-bottom: 0.75em;
+}
+.MuiTypographyparagraph-0-1-40 {
+  margin-bottom: 16px;
+}
+.MuiTypographycolorInherit-0-1-41 {
+  color: inherit;
+}
+.MuiTypographycolorPrimary-0-1-42 {
+  color: #0A7CFF;
+}
+.MuiTypographycolorSecondary-0-1-43 {
+  color: #f50057;
+}
+.MuiTypographycolorTextPrimary-0-1-44 {
+  color: #072d57;
+}
+.MuiTypographycolorTextSecondary-0-1-45 {
+  color: #99a9ba;
+}
+.MuiTypographycolorError-0-1-46 {
+  color: #fe7a7a;
+}
+.MuiTypographydisplayInline-0-1-47 {
+  display: inline;
+}
+.MuiTypographydisplayBlock-0-1-48 {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRippleroot-0-1-237 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRippleripple-0-1-238 {
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipplerippleVisible-0-1-239 {
+  opacity: 0.3;
+  animation: MuiTouchRipplekeyframes-enter-0-1-244 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+.MuiTouchRippleripplePulsate-0-1-240 {
+  animation-duration: 200ms;
+}
+.MuiTouchRipplechild-0-1-241 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipplechildLeaving-0-1-242 {
+  opacity: 0;
+  animation: MuiTouchRipplekeyframes-exit-0-1-245 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiTouchRipplechildPulsate-0-1-243 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: MuiTouchRipplekeyframes-pulsate-0-1-246 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+}
+@-webkit-keyframes MuiTouchRipplekeyframes-enter-0-1-244 {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes MuiTouchRipplekeyframes-exit-0-1-245 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes MuiTouchRipplekeyframes-pulsate-0-1-246 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBaseroot-0-1-65 {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  font-family: inherit;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBaseroot-0-1-65::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBaseroot-0-1-65.MuiButtonBasedisabled-0-1-66 {
+  cursor: default;
+  pointer-events: none;
+}
+@media print {
+  .MuiButtonBaseroot-0-1-65 {
+    -webkit-print-color-adjust: exact;
+  }
+}
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButtonroot-0-1-169 {
+  color: #072d57;
+  padding: 6px 16px;
+  font-size: 1rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.MuiButtonroot-0-1-169:hover {
+  text-decoration: none;
+  background-color: rgba(7, 45, 87, 0.04);
+}
+.MuiButtonroot-0-1-169.MuiButtondisabled-0-1-182 {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButtonroot-0-1-169:hover {
+    background-color: transparent;
+  }
+}
+.MuiButtonroot-0-1-169:hover.MuiButtondisabled-0-1-182 {
+  background-color: transparent;
+}
+.MuiButtonlabel-0-1-170 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButtontext-0-1-171 {
+  padding: 6px 8px;
+}
+.MuiButtontextPrimary-0-1-172 {
+  color: #0A7CFF;
+}
+.MuiButtontextPrimary-0-1-172:hover {
+  background-color: rgba(10, 124, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiButtontextPrimary-0-1-172:hover {
+    background-color: transparent;
+  }
+}
+.MuiButtontextSecondary-0-1-173 {
+  color: #f50057;
+}
+.MuiButtontextSecondary-0-1-173:hover {
+  background-color: rgba(245, 0, 87, 0.04);
+}
+@media (hover: none) {
+  .MuiButtontextSecondary-0-1-173:hover {
+    background-color: transparent;
+  }
+}
+.MuiButtonoutlined-0-1-174 {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 15px;
+}
+.MuiButtonoutlined-0-1-174.MuiButtondisabled-0-1-182 {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiButtonoutlinedPrimary-0-1-175 {
+  color: #0A7CFF;
+  border: 1px solid rgba(10, 124, 255, 0.5);
+}
+.MuiButtonoutlinedPrimary-0-1-175:hover {
+  border: 1px solid #0A7CFF;
+  background-color: rgba(10, 124, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiButtonoutlinedPrimary-0-1-175:hover {
+    background-color: transparent;
+  }
+}
+.MuiButtonoutlinedSecondary-0-1-176 {
+  color: #f50057;
+  border: 1px solid rgba(245, 0, 87, 0.5);
+}
+.MuiButtonoutlinedSecondary-0-1-176:hover {
+  border: 1px solid #f50057;
+  background-color: rgba(245, 0, 87, 0.04);
+}
+.MuiButtonoutlinedSecondary-0-1-176.MuiButtondisabled-0-1-182 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButtonoutlinedSecondary-0-1-176:hover {
+    background-color: transparent;
+  }
+}
+.MuiButtoncontained-0-1-177 {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #e0e0e0;
+}
+.MuiButtoncontained-0-1-177:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: #d5d5d5;
+}
+.MuiButtoncontained-0-1-177.MuiButtonfocusVisible-0-1-181 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButtoncontained-0-1-177:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButtoncontained-0-1-177.MuiButtondisabled-0-1-182 {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+@media (hover: none) {
+  .MuiButtoncontained-0-1-177:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0;
+  }
+}
+.MuiButtoncontained-0-1-177:hover.MuiButtondisabled-0-1-182 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButtoncontainedPrimary-0-1-178 {
+  color: #fff;
+  background-color: #0A7CFF;
+}
+.MuiButtoncontainedPrimary-0-1-178:hover {
+  background-color: #0067DD;
+}
+@media (hover: none) {
+  .MuiButtoncontainedPrimary-0-1-178:hover {
+    background-color: #0A7CFF;
+  }
+}
+.MuiButtoncontainedSecondary-0-1-179 {
+  color: #fff;
+  background-color: #f50057;
+}
+.MuiButtoncontainedSecondary-0-1-179:hover {
+  background-color: #c51162;
+}
+@media (hover: none) {
+  .MuiButtoncontainedSecondary-0-1-179:hover {
+    background-color: #f50057;
+  }
+}
+.MuiButtondisableElevation-0-1-180 {
+  box-shadow: none;
+}
+.MuiButtondisableElevation-0-1-180:hover {
+  box-shadow: none;
+}
+.MuiButtondisableElevation-0-1-180.MuiButtonfocusVisible-0-1-181 {
+  box-shadow: none;
+}
+.MuiButtondisableElevation-0-1-180:active {
+  box-shadow: none;
+}
+.MuiButtondisableElevation-0-1-180.MuiButtondisabled-0-1-182 {
+  box-shadow: none;
+}
+.MuiButtoncolorInherit-0-1-183 {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButtontextSizeSmall-0-1-184 {
+  padding: 4px 5px;
+  font-size: 0.9285714285714286rem;
+}
+.MuiButtontextSizeLarge-0-1-185 {
+  padding: 8px 11px;
+  font-size: 1.0714285714285714rem;
+}
+.MuiButtonoutlinedSizeSmall-0-1-186 {
+  padding: 3px 9px;
+  font-size: 0.9285714285714286rem;
+}
+.MuiButtonoutlinedSizeLarge-0-1-187 {
+  padding: 7px 21px;
+  font-size: 1.0714285714285714rem;
+}
+.MuiButtoncontainedSizeSmall-0-1-188 {
+  padding: 4px 10px;
+  font-size: 0.9285714285714286rem;
+}
+.MuiButtoncontainedSizeLarge-0-1-189 {
+  padding: 8px 22px;
+  font-size: 1.0714285714285714rem;
+}
+.MuiButtonfullWidth-0-1-192 {
+  width: 100%;
+}
+.MuiButtonstartIcon-0-1-193 {
+  display: inherit;
+  margin-left: -4px;
+  margin-right: 8px;
+}
+.MuiButtonstartIcon-0-1-193.MuiButtoniconSizeSmall-0-1-195 {
+  margin-left: -2px;
+}
+.MuiButtonendIcon-0-1-194 {
+  display: inherit;
+  margin-left: 8px;
+  margin-right: -4px;
+}
+.MuiButtonendIcon-0-1-194.MuiButtoniconSizeSmall-0-1-195 {
+  margin-right: -2px;
+}
+.MuiButtoniconSizeSmall-0-1-195 > *:first-child {
+  font-size: 18px;
+}
+.MuiButtoniconSizeMedium-0-1-196 > *:first-child {
+  font-size: 20px;
+}
+.MuiButtoniconSizeLarge-0-1-197 > *:first-child {
+  font-size: 22px;
+}
+</style><style data-jss="" data-meta="MuiCircularProgress">
+.MuiCircularProgressroot-0-1-269 {
+  display: inline-block;
+}
+.MuiCircularProgressstatic-0-1-270 {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiCircularProgressindeterminate-0-1-271 {
+  animation: MuiCircularProgresskeyframes-circular-rotate-0-1-280 1.4s linear infinite;
+}
+.MuiCircularProgressdeterminate-0-1-272 {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiCircularProgresscolorPrimary-0-1-273 {
+  color: #0A7CFF;
+}
+.MuiCircularProgresscolorSecondary-0-1-274 {
+  color: #f50057;
+}
+.MuiCircularProgresssvg-0-1-275 {
+  display: block;
+}
+.MuiCircularProgresscircle-0-1-276 {
+  stroke: currentColor;
+}
+.MuiCircularProgresscircleStatic-0-1-277 {
+  transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiCircularProgresscircleIndeterminate-0-1-278 {
+  animation: MuiCircularProgresskeyframes-circular-dash-0-1-281 1.4s ease-in-out infinite;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0px;
+}
+.MuiCircularProgresscircleDeterminate-0-1-279 {
+  transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+@-webkit-keyframes MuiCircularProgresskeyframes-circular-rotate-0-1-280 {
+  0% {
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes MuiCircularProgresskeyframes-circular-dash-0-1-281 {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0px;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+.MuiCircularProgresscircleDisableShrink-0-1-282 {
+  animation: none;
+}
+</style><style data-jss="" data-meta="Button">
+.Buttonroot-0-1-153 {
+  color: #0A7CFF;
+  padding: 5px 20px;
+  overflow: hidden;
+  position: relative;
+  font-size: 1rem;
+  transition: background .25s ease-out;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: none;
+  background-color: transparent;
+}
+.Buttonroot-0-1-153:hover {
+  background-color: #f5f5f5;
+}
+.ButtonrootLoading-0-1-154 {
+  color: transparent;
+}
+.ButtonrootLoading-0-1-154:hover {
+  background-color: inherit;
+}
+.ButtonrootBlock-0-1-155 {
+  border-radius: 0;
+}
+.ButtonrootExtraSmall-0-1-156 {
+  padding: 3px 10px;
+  font-size: 0.7142857142857143rem;
+  min-height: 20px;
+}
+.ButtonrootSmall-0-1-157 {
+  font-size: 0.8571428571428571rem;
+  min-height: 32px;
+}
+.ButtonrootMedium-0-1-158 {
+  min-height: 40px;
+}
+.ButtonrootLarge-0-1-159 {
+  min-height: 64px;
+}
+.ButtonrootRegular-0-1-160 {
+  color: #ffffff;
+  background-color: #0A7CFF;
+}
+.ButtonrootRegular-0-1-160:hover {
+  background-color: #0067DD;
+}
+.ButtonrootRegularLoading-0-1-161 {
+  color: transparent;
+  background-color: #f5f5f5;
+}
+.ButtonrootRegularDisabled-0-1-162 {
+  background-color: #e0e0e0;
+}
+.ButtonrootOutlined-0-1-163 {
+  border: 1px solid #b7c2ce;
+}
+.ButtonrootOutlinedDisabled-0-1-164 {
+  border-color: #e0e0e0;
+}
+.Buttondisabled-0-1-165 {
+  color: #bdbdbd;
+}
+.ButtonloaderContainer-0-1-166 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+.ButtonloaderContainerText-0-1-167 {
+  background-color: transparent;
+}
+.Buttonloader-0-1-168 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+}
+</style><style data-jss="" data-meta="MuiTooltip">
+.MuiTooltippopper-0-1-206 {
+  z-index: 1500;
+  pointer-events: none;
+}
+.MuiTooltippopperInteractive-0-1-207 {
+  pointer-events: auto;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="bottom"] .MuiTooltiparrow-0-1-211 {
+  top: 0;
+  left: 0;
+  margin-top: -0.71em;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="top"] .MuiTooltiparrow-0-1-211 {
+  left: 0;
+  bottom: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: -0.71em;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="right"] .MuiTooltiparrow-0-1-211 {
+  left: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-left: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="left"] .MuiTooltiparrow-0-1-211 {
+  right: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-right: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="left"] .MuiTooltiparrow-0-1-211::before {
+  transform-origin: 0 0;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="right"] .MuiTooltiparrow-0-1-211::before {
+  transform-origin: 100% 100%;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="top"] .MuiTooltiparrow-0-1-211::before {
+  transform-origin: 100% 0;
+}
+.MuiTooltippopperArrow-0-1-208[x-placement*="bottom"] .MuiTooltiparrow-0-1-211::before {
+  transform-origin: 0 100%;
+}
+.MuiTooltiptooltip-0-1-209 {
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.7142857142857143rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 4px;
+  background-color: #072d57;
+}
+.MuiTooltiptooltipArrow-0-1-210 {
+  margin: 0;
+  position: relative;
+}
+.MuiTooltiparrow-0-1-211 {
+  color: #072d57;
+  width: 1em;
+  height: 0.71em;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+.MuiTooltiparrow-0-1-211::before {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: currentColor;
+}
+.MuiTooltiptouch-0-1-212 {
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.14286em;
+}
+.MuiTooltiptooltipPlacementLeft-0-1-213 {
+  margin: 0 24px ;
+  transform-origin: right center;
+}
+@media (min-width:768px) {
+  .MuiTooltiptooltipPlacementLeft-0-1-213 {
+    margin: 0 14px;
+  }
+}
+.MuiTooltiptooltipPlacementRight-0-1-214 {
+  margin: 0 24px;
+  transform-origin: left center;
+}
+@media (min-width:768px) {
+  .MuiTooltiptooltipPlacementRight-0-1-214 {
+    margin: 0 14px;
+  }
+}
+.MuiTooltiptooltipPlacementTop-0-1-215 {
+  top: 6px;
+  margin: 24px 0;
+  transform-origin: center bottom;
+}
+@media (min-width:768px) {
+  .MuiTooltiptooltipPlacementTop-0-1-215 {
+    margin: 14px 0;
+  }
+}
+.MuiTooltiptooltipPlacementBottom-0-1-216 {
+  margin: 24px 0;
+  transform-origin: center top;
+}
+@media (min-width:768px) {
+  .MuiTooltiptooltipPlacementBottom-0-1-216 {
+    margin: 14px 0;
+  }
+}
+</style><style data-jss="" data-meta="MuiLink">
+.MuiLinkunderlineNone-0-1-14 {
+  text-decoration: none;
+}
+.MuiLinkunderlineHover-0-1-15 {
+  text-decoration: none;
+}
+.MuiLinkunderlineHover-0-1-15:hover {
+  text-decoration: underline;
+}
+.MuiLinkunderlineAlways-0-1-16 {
+  text-decoration: underline;
+}
+.MuiLinkbutton-0-1-17 {
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiLinkbutton-0-1-17::-moz-focus-inner {
+  border-style: none;
+}
+.MuiLinkbutton-0-1-17.MuiLinkfocusVisible-0-1-18 {
+  outline: auto;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesicon-0-1-5 {
+  fill: #000000;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.Toastify__toast {
+  color: black;
+  font-size: 1rem;
+  background: white;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 300;
+}
+.Toastify__progress-bar {
+  background-color: #0A7CFF;
+}
+.template-message {
+  display: flex;
+  padding: 17px 12px;
+  align-items: center;
+}
+.template-message__icon-wrapper {
+  color: white;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 12px;
+  border-radius: 50%;
+  justify-content: center;
+  background-color: #0A7CFF;
+}
+.template-message__icon {
+  width: 14px;
+  height: 10px;
+  flex-shrink: 0;
+}
+.Toastify__toast--error .template-message__icon-wrapper {
+  background-color: #fe7a7a;
+}
+.Toastify__toast--error .Toastify__progress-bar {
+  background-color: #fe7a7a;
+}
+.Toastify__toast--error .template-message__icon {
+  transform: rotate(45deg);
+}
+</style><style data-jss="" data-meta="GlobalCSS">
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html, body, #root {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-y: scroll;
+  overflow: overlay;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.43;
+  background-color: #F2F5FA;
+}
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+*::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #dde2e8;
+}
+#root {
+  min-height: 100vh;
+  background-color: #f0f4f7;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesfooter-0-1-218 {
+  color: #99a9ba;
+  display: flex;
+  padding: 15px 0;
+  border-top: 1px solid #ebeef1;
+  justify-content: center;
+}
+.makeStylesfooterWrapper-0-1-219 {
+  width: 100%;
+  display: flex;
+  max-width: 450px;
+  justify-content: space-between;
+}
+@media (max-width:767.95px) {
+  .makeStylesfooterWrapper-0-1-219 {
+    padding: 0 32px;
+    max-width: 425px;
+  }
+}
+.makeStylescopyright-0-1-220 {
+  color: #99a9ba;
+  margin: 0;
+  font-size: 0.8571428571428571rem;
+}
+.makeStylescontactLink-0-1-221 {
+  color: #99a9ba;
+  font-size: 0.8571428571428571rem;
+  transition: color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.makeStylescontactLink-0-1-221:hover {
+  color: #0A7CFF;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylescontainer-0-1-4 {
+  display: flex;
+  flex-direction: column;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesmain-0-1-1 {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.makeStylesmainWrapper-0-1-2 {
+  width: 100%;
+  height: 720px;
+  display: flex;
+  max-width: 1280px;
+  box-shadow: 0px 16px 56px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+@media (max-width:1279.95px) {
+  .makeStylesmainWrapper-0-1-2 {
+    width: 640px;
+  }
+}
+@media (max-width:1023.95px) {
+  .makeStylesmainWrapper-0-1-2 {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+@media (max-width:767.95px) {
+  .makeStylesmainWrapper-0-1-2 {
+    height: auto;
+  }
+}
+.makeStylesmainSection-0-1-3 {
+  width: 50%;
+}
+@media (max-width:1279.95px) {
+  .makeStylesmainSection-0-1-3 {
+    width: 100%;
+  }
+}
+</style><style data-jss="" data-meta="MuiBox">
+
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesmainTitle-0-1-49 {
+  margin: 0 0 24px;
+  overflow: hidden;
+  max-height: 4.1em;
+  flex-shrink: 0;
+  text-overflow: ellipsis;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStyleslicenseText-0-1-198 {
+  color: #99a9ba;
+  font-size: 0.8571428571428571rem;
+  margin-bottom: 12px;
+}
+.makeStyleslicenseText-0-1-198>a {
+  margin: 0px 2px;
+  display: inline-block;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylestooltip-0-1-205 {
+  color: #072d57;
+  padding: 16px 20px;
+  font-size: 0.8571428571428571rem;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  background-color: white;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesiframeContainer-0-1-217 {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.makeStylesiframeContainer-0-1-217>iframe {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  bottom: 0;
+  height: 100% !important;
+  opacity: 0.00001;
+  position: absolute;
+}
+.makeStylesiframeContainer-0-1-217>iframe:hover {
+  cursor: pointer;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylestitle-0-1-199 {
+  color: #99a9ba;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.makeStylestitle-0-1-199::before, .makeStylestitle-0-1-199::after {
+  height: 1px;
+  content: "";
+  flex-grow: 1;
+  background-color: #dde2e8;
+}
+.makeStylestitle-0-1-199::before {
+  margin-right: 8px;
+}
+.makeStylestitle-0-1-199::after {
+  margin-left: 8px;
+}
+.makeStylesbuttonGroup-0-1-200 {
+  gap: 8px;
+  display: flex;
+}
+@media (max-width:767.95px) {
+  .makeStylesbuttonGroup-0-1-200 {
+    flex-wrap: wrap;
+  }
+  .makeStylesbuttonGroup-0-1-200 > div {
+    flex: 1;
+  }
+}
+.makeStylesbutton-0-1-201 {
+  height: 42px;
+  box-sizing: border-box;
+}
+.makeStylesswitchAuthTypeBtn-0-1-202 {
+  flex: 1;
+  color: #072d57;
+  display: flex;
+  align-items: center;
+}
+.makeStylesclassicAuthIcon-0-1-203 {
+  margin-right: 16px;
+}
+.makeStylesadditionalAuthBtn-0-1-204 {
+  padding: 0;
+  min-width: 44px;
+}
+.makeStylesadditionalAuthBtn-0-1-204:disabled svg {
+  opacity: 0.6;
+}
+@media (max-width:767.95px) {
+  .makeStylesadditionalAuthBtn-0-1-204 {
+    width: 100%;
+    padding: 0px 8px;
+  }
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.MuiIconButtonroot-0-1-131 {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.7142857142857142rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiIconButtonroot-0-1-131:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiIconButtonroot-0-1-131.MuiIconButtondisabled-0-1-137 {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+@media (hover: none) {
+  .MuiIconButtonroot-0-1-131:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButtonedgeStart-0-1-132 {
+  margin-left: -12px;
+}
+.MuiIconButtonsizeSmall-0-1-138.MuiIconButtonedgeStart-0-1-132 {
+  margin-left: -3px;
+}
+.MuiIconButtonedgeEnd-0-1-133 {
+  margin-right: -12px;
+}
+.MuiIconButtonsizeSmall-0-1-138.MuiIconButtonedgeEnd-0-1-133 {
+  margin-right: -3px;
+}
+.MuiIconButtoncolorInherit-0-1-134 {
+  color: inherit;
+}
+.MuiIconButtoncolorPrimary-0-1-135 {
+  color: #0A7CFF;
+}
+.MuiIconButtoncolorPrimary-0-1-135:hover {
+  background-color: rgba(10, 124, 255, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButtoncolorPrimary-0-1-135:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButtoncolorSecondary-0-1-136 {
+  color: #f50057;
+}
+.MuiIconButtoncolorSecondary-0-1-136:hover {
+  background-color: rgba(245, 0, 87, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButtoncolorSecondary-0-1-136:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButtonsizeSmall-0-1-138 {
+  padding: 3px;
+  font-size: 1.2857142857142858rem;
+}
+.MuiIconButtonlabel-0-1-139 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIconroot-0-1-140 {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.7142857142857142rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIconcolorPrimary-0-1-141 {
+  color: #0A7CFF;
+}
+.MuiSvgIconcolorSecondary-0-1-142 {
+  color: #f50057;
+}
+.MuiSvgIconcolorAction-0-1-143 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIconcolorError-0-1-144 {
+  color: #fe7a7a;
+}
+.MuiSvgIconcolorDisabled-0-1-145 {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIconfontSizeInherit-0-1-146 {
+  font-size: inherit;
+}
+.MuiSvgIconfontSizeSmall-0-1-147 {
+  font-size: 1.4285714285714286rem;
+}
+.MuiSvgIconfontSizeLarge-0-1-148 {
+  font-size: 2.5rem;
+}
+</style><style data-jss="" data-meta="MuiFormControl">
+.MuiFormControlroot-0-1-69 {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  flex-direction: column;
+  padding-bottom: 20px;
+  vertical-align: top;
+}
+.MuiFormControlmarginNormal-0-1-70 {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.MuiFormControlmarginDense-0-1-71 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.MuiFormControlfullWidth-0-1-72 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiInputBase">
+@-webkit-keyframes mui-auto-fill {}
+@-webkit-keyframes mui-auto-fill-cancel {}
+.MuiInputBaseroot-0-1-108 {
+  color: #072d57;
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  font-size: 1.142rem;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1.1876em;
+}
+.MuiInputBaseroot-0-1-108.MuiInputBasedisabled-0-1-111 {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.MuiInputBaseroot-0-1-108::placeholder {
+  color: #99a9ba;
+  font-size: 1rem;
+}
+.MuiInputBasemultiline-0-1-116 {
+  padding: 6px 0 7px;
+}
+.MuiInputBasemultiline-0-1-116.MuiInputBasemarginDense-0-1-115 {
+  padding-top: 3px;
+}
+.MuiInputBasefullWidth-0-1-118 {
+  width: 100%;
+}
+.MuiInputBaseinput-0-1-119 {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiInputBaseinput-0-1-119::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBaseinput-0-1-119::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBaseinput-0-1-119:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBaseinput-0-1-119::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBaseinput-0-1-119:focus {
+  outline: 0;
+}
+.MuiInputBaseinput-0-1-119:invalid {
+  box-shadow: none;
+}
+.MuiInputBaseinput-0-1-119::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.MuiInputBaseinput-0-1-119.MuiInputBasedisabled-0-1-111 {
+  opacity: 1;
+}
+.MuiInputBaseinput-0-1-119:-webkit-autofill {
+  animation-name: mui-auto-fill;
+  animation-duration: 5000s;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119::-moz-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119:-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119::-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBaseformControl-0-1-109 .MuiInputBaseinput-0-1-119:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.MuiInputBaseinputMarginDense-0-1-120 {
+  padding-top: 3px;
+}
+.MuiInputBaseinputMultiline-0-1-121 {
+  height: auto;
+  resize: none;
+  padding: 0;
+}
+.MuiInputBaseinputTypeSearch-0-1-122 {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="PrivateNotchedOutline">
+.PrivateNotchedOutlineroot-0-1-126 {
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.PrivateNotchedOutlinelegend-0-1-127 {
+  padding: 0;
+  text-align: left;
+  transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  line-height: 11px;
+}
+.PrivateNotchedOutlinelegendLabelled-0-1-128 {
+  width: auto;
+  height: 11px;
+  display: block;
+  padding: 0;
+  font-size: 0.75em;
+  max-width: 0.01px;
+  text-align: left;
+  transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  visibility: hidden;
+}
+.PrivateNotchedOutlinelegendLabelled-0-1-128 > span {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.PrivateNotchedOutlinelegendNotched-0-1-129 {
+  max-width: 1000px;
+  transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+}
+</style><style data-jss="" data-meta="MuiOutlinedInput">
+.MuiOutlinedInputroot-0-1-93 {
+  position: relative;
+  border-radius: 4px;
+}
+.MuiOutlinedInputroot-0-1-93:hover .MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: #072d57;
+}
+@media (hover: none) {
+  .MuiOutlinedInputroot-0-1-93:hover .MuiOutlinedInputnotchedOutline-0-1-102 {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+.MuiOutlinedInputroot-0-1-93.MuiOutlinedInputfocused-0-1-95 .MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: #0A7CFF;
+  border-width: 2px;
+}
+.MuiOutlinedInputroot-0-1-93.MuiOutlinedInputerror-0-1-99 .MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: #fe7a7a;
+}
+.MuiOutlinedInputroot-0-1-93.MuiOutlinedInputdisabled-0-1-96 .MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.MuiOutlinedInputcolorSecondary-0-1-94.MuiOutlinedInputfocused-0-1-95 .MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: #f50057;
+}
+.MuiOutlinedInputadornedStart-0-1-97 {
+  padding-left: 14px;
+}
+.MuiOutlinedInputadornedEnd-0-1-98 {
+  padding-right: 14px;
+}
+.MuiOutlinedInputmultiline-0-1-101 {
+  padding: 18.5px 14px;
+}
+.MuiOutlinedInputmultiline-0-1-101.MuiOutlinedInputmarginDense-0-1-100 {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInputnotchedOutline-0-1-102 {
+  border-color: #b7c2ce;
+}
+.MuiOutlinedInputinput-0-1-103 {
+  padding: 15px 16px;
+}
+.MuiOutlinedInputinput-0-1-103:-webkit-autofill {
+  border-radius: inherit;
+}
+.MuiOutlinedInputinputMarginDense-0-1-104 {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInputinputMultiline-0-1-105 {
+  padding: 0;
+}
+.MuiOutlinedInputinputAdornedStart-0-1-106 {
+  padding-left: 0;
+}
+.MuiOutlinedInputinputAdornedEnd-0-1-107 {
+  padding-right: 0;
+}
+</style><style data-jss="" data-meta="MuiFormLabel">
+.MuiFormLabelroot-0-1-85 {
+  color: #99a9ba;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif, system-ui;
+  font-weight: 400;
+  line-height: 1;
+}
+.MuiFormLabelroot-0-1-85.MuiFormLabelfocused-0-1-87 {
+  color: #0A7CFF;
+}
+.MuiFormLabelroot-0-1-85.MuiFormLabeldisabled-0-1-88 {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiFormLabelroot-0-1-85.MuiFormLabelerror-0-1-89 {
+  color: #fe7a7a;
+}
+.MuiFormLabelcolorSecondary-0-1-86.MuiFormLabelfocused-0-1-87 {
+  color: #f50057;
+}
+.MuiFormLabelasterisk-0-1-92.MuiFormLabelerror-0-1-89 {
+  color: #fe7a7a;
+}
+</style><style data-jss="" data-meta="MuiInputLabel">
+.MuiInputLabelroot-0-1-73 {
+  display: block;
+  transform-origin: top left;
+}
+.MuiInputLabelroot-0-1-73.MuiInputLabeldisabled-0-1-75 {
+  opacity: 0.7;
+}
+.MuiInputLabelformControl-0-1-79 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.MuiInputLabelmarginDense-0-1-80 {
+  transform: translate(0, 21px) scale(1);
+}
+.MuiInputLabelshrink-0-1-81 {
+  transform: translate(14px, -5px) scale(0.75);
+  transform-origin: top left;
+}
+.MuiInputLabelanimated-0-1-82 {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.MuiInputLabelfilled-0-1-83 {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabelfilled-0-1-83.MuiInputLabelmarginDense-0-1-80 {
+  transform: translate(12px, 17px) scale(1);
+}
+.MuiInputLabelfilled-0-1-83.MuiInputLabelshrink-0-1-81 {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.MuiInputLabelfilled-0-1-83.MuiInputLabelshrink-0-1-81.MuiInputLabelmarginDense-0-1-80 {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.MuiInputLabeloutlined-0-1-84 {
+  z-index: 1;
+  font-size: 1.142rem;
+  transform: translate(16px, 17px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabeloutlined-0-1-84.MuiInputLabelmarginDense-0-1-80 {
+  transform: translate(14px, 12px) scale(1);
+}
+.MuiInputLabeloutlined-0-1-84.MuiInputLabelshrink-0-1-81 {
+  transform: translate(14px, -6px) scale(0.75);
+}
+</style><style data-jss="" data-meta="MuiTextField">
+
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylescontainer-0-1-7 {
+  display: flex;
+  overflow: auto;
+  flex-grow: 1;
+  align-items: center;
+  padding-top: 56px;
+  flex-direction: column;
+  padding-bottom: 16px;
+  justify-content: flex-start;
+}
+@media (max-width:1023.95px) {
+  .makeStylescontainer-0-1-7 {
+    padding-top: 72px;
+  }
+}
+@media (max-width:767.95px) {
+  .makeStylescontainer-0-1-7 {
+    padding-bottom: 48px;
+  }
+}
+.makeStyleswrapper-0-1-8 {
+  width: 100%;
+  max-width: 450px;
+}
+@media (max-width:767.95px) {
+  .makeStyleswrapper-0-1-8 {
+    padding: 0 32px;
+    max-width: 425px;
+  }
+}
+.makeStylesheader-0-1-9 {
+  margin-bottom: 20px;
+}
+.makeStylescontent-0-1-10 {
+  flex-grow: 1;
+}
+.makeStyleslogo-0-1-11 {
+  width: 308px;
+  height: 33px;
+}
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="MuiCollapse">
+.MuiCollapsecontainer-0-1-57 {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiCollapseentered-0-1-58 {
+  height: auto;
+  overflow: visible;
+}
+.MuiCollapsehidden-0-1-59 {
+  visibility: hidden;
+}
+.MuiCollapsewrapper-0-1-60 {
+  display: flex;
+}
+.MuiCollapsewrapperInner-0-1-61 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylescontainer-0-1-54 {
+  min-height: auto !important;
+}
+.makeStyleslist-0-1-55 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesfield-0-1-63 {
+  position: relative;
+}
+.makeStylessubTitle-0-1-64 {
+  top: -10px;
+  right: 10px;
+  padding: 2px 6px;
+  z-index: 1;
+  position: absolute;
+  font-weight: 300;
+  border-radius: 2px;
+  background-color: white;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStyleswarning-0-1-130 {
+  color: #f58f35;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesbutton-0-1-62 {
+  color: #0A7CFF;
+  padding: 0 2px;
+  font-size: 0.8571428571428571rem;
+  border-radius: 2px;
+  text-decoration: underline;
+}
+.makeStylesbutton-0-1-62:focus:not(:active) {
+  box-shadow: 0 0 2px 1px #2285EE;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylessubmitButtonWrap-0-1-149 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width:767.95px) {
+  .makeStylessubmitButtonWrap-0-1-149 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width:767.95px) {
+  .makeStylessignInText-0-1-150 {
+    margin-right: 16px;
+  }
+}
+.makeStylessignInButton-0-1-151 {
+  margin-bottom: 0;
+}
+@media (max-width:767.95px) {
+  .makeStylessignInButton-0-1-151 {
+    margin-bottom: 32px;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylescontent-0-1-50 {
+  margin-bottom: 12px;
+}
+@media (max-width:767.95px) {
+  .makeStylescontent-0-1-50 {
+    margin-bottom: 24px;
+  }
+}
+.makeStyleslinkContainer-0-1-51 {
+  display: flex;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylescontainer-0-1-6 {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+</style><style data-jss="" data-meta="fonts">
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations');
+}
+@font-face {
+  font-weight: 100;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-ExtraLight.adc4a7f402049acac77d.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 200;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-ExtraLight.adc4a7f402049acac77d.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-Light.d03f265a9c222584a055.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-Regular.82b079afb111983c04ef.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-Medium.4a88d55fa0d3fdbed00b.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 600;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-SemiBold.26ad6bf1def8d06b182c.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-Bold.d109d6f81a8764425cf6.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 800;
+  font-style: normal;
+  font-family: Manrope;
+  font-display: swap;
+  src: url('/static/Manrope-VariableFont.fca742de1e52774d3fad.ttf') format('truetype-variations'), url('/static/Manrope-ExtraBold.9228fb8db13b8386c8f7.ttf') format('truetype');
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylespanel-0-1-266, .makeStylespanel-0-1-266.slick-dots {
+  bottom: 0;
+  display: flex;
+  padding: 0 72px 48px;
+}
+.makeStylestryLink-0-1-267 {
+  display: flex;
+  margin-right: 88px;
+  background-color: #ffffff;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.slick-dots .makeStyleslist-0-1-268, .makeStyleslist-0-1-268 {
+  margin: 0;
+  display: flex;
+  padding: 0;
+  list-style: none;
+  align-items: flex-end;
+}
+.slick-dots .makeStyleslist-0-1-268 li, .makeStyleslist-0-1-268 li {
+  width: auto;
+  height: auto;
+  margin: 0 16px 0 0;
+}
+.slick-dots .makeStyleslist-0-1-268 li.slick-active button::before, .makeStyleslist-0-1-268 li.slick-active button::before {
+  opacity: 1;
+}
+.slick-dots .makeStyleslist-0-1-268 li:last-child, .makeStyleslist-0-1-268 li:last-child {
+  margin-right: 0;
+}
+.slick-dots .makeStyleslist-0-1-268 li button, .makeStyleslist-0-1-268 li button {
+  width: 14px;
+  border: none;
+  height: 14px;
+  display: flex;
+  outline: none;
+  padding: 0;
+  background: #ffffff;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+.slick-dots .makeStyleslist-0-1-268 li button::before, .makeStyleslist-0-1-268 li button::before {
+  width: 8px;
+  height: 8px;
+  content: "";
+  opacity: 0;
+  position: static;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.6, 1);
+  border-radius: 50%;
+  background-color: #99a9ba;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStylesadvertisingContainer-0-1-247 {
+  position: relative;
+  background: linear-gradient(270deg, #EBEEF1 0.84%, #E2E6EB 100%);
+}
+.makeStylessliderContainer-0-1-248 {
+  height: 100%;
+}
+.makeStylessliderContainer-0-1-248 .slick-list, .makeStylessliderContainer-0-1-248 .slick-track {
+  height: 100%;
+}
+.makeStylessliderContainer-0-1-248 .slick-slide > div {
+  height: 100%;
+}
+.makeStylespanel-0-1-249, .makeStylespanel-0-1-249.slick-dots {
+  bottom: 0;
+  position: absolute;
+}
+.makeStylesslideImg-0-1-250 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style><style data-emotion="css-global" data-s=""></style><style data-emotion="css-global" data-s=""></style><style data-emotion="css-global" data-s=""></style><style data-emotion="css" data-s=""></style><script src="https://www.google.com/recaptcha/api.js?render=6LdI074UAAAAAFV8E3_eNoMTcGHeXysP39vmbL8x"></script><script src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&amp;onload=onSmartCaptchaLoad" defer=""></script><script src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&amp;onload=onSmartCaptchaLoad" defer=""></script><style>.SmartCaptcha-Overlay{
+  position:fixed;
+  z-index:9999999;
+  top:-10000px;
+  left:-10000px;
+
+  width:100%;
+  width:var(--smart-captcha-doc-width, 100%);
+  height:100%;
+  height:var(--smart-captcha-doc-height, 100%);
+  margin:0;
+  padding:0;
+
+  background:rgba(0, 0, 0, 0.4);
+}
+
+.SmartCaptcha-Overlay.SmartCaptcha-Overlay_visible{
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.SmartCaptcha-Overlay.SmartCaptcha-Overlay_no_background{
+  background:none;
+}
+
+.SmartCaptcha-Overlay .SmartCaptcha-Spin{
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+
+  margin:auto;
+
+  transform:translateY(-50%);
+}
+</style><style>.SmartCaptcha-Spin{
+  display:none;
+  visibility:hidden;
+
+  box-sizing:border-box;
+
+  border:2px solid transparent;
+  border-radius:50%;
+  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+.SmartCaptcha-Spin::after{
+  visibility:hidden;
+
+  content:'\00A0';
+}
+.SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{
+  display:inline-block;
+  visibility:visible;
+
+  width:50px;
+  height:50px;
+
+  border-top-color:#5282FF;
+  border-left-color:#5282FF;
+
+  animation:islands-spin 1s .21s infinite linear;
+
+  backface-visibility:hidden;
+}
+ .SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{
+  border-top-color:var(--spin-view-default-border-color, #5282FF);
+  border-left-color:var(--spin-view-default-border-color, #5282FF);
+}
+
+@keyframes islands-spin{
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+</style><style>.smart-captcha{
+  min-width:300px;
+  height:102px;
+}
+
+.smart-captcha_invisible{
+  height:0;
+}
+</style><link rel="prefetch" as="script" href="https://smartcaptcha.yandexcloud.net/shield.99cae02f31149fbbaa53.chunk.js"><style>.SmartCaptcha-Overlay{
+  position:fixed;
+  z-index:9999999;
+  top:-10000px;
+  left:-10000px;
+
+  width:100%;
+  width:var(--smart-captcha-doc-width, 100%);
+  height:100%;
+  height:var(--smart-captcha-doc-height, 100%);
+  margin:0;
+  padding:0;
+
+  background:rgba(0, 0, 0, 0.4);
+}
+
+.SmartCaptcha-Overlay.SmartCaptcha-Overlay_visible{
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.SmartCaptcha-Overlay.SmartCaptcha-Overlay_no_background{
+  background:none;
+}
+
+.SmartCaptcha-Overlay .SmartCaptcha-Spin{
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+
+  margin:auto;
+
+  transform:translateY(-50%);
+}
+</style><style>.SmartCaptcha-Spin{
+  display:none;
+  visibility:hidden;
+
+  box-sizing:border-box;
+
+  border:2px solid transparent;
+  border-radius:50%;
+  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+.SmartCaptcha-Spin::after{
+  visibility:hidden;
+
+  content:'\00A0';
+}
+.SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{
+  display:inline-block;
+  visibility:visible;
+
+  width:50px;
+  height:50px;
+
+  border-top-color:#5282FF;
+  border-left-color:#5282FF;
+
+  animation:islands-spin 1s .21s infinite linear;
+
+  backface-visibility:hidden;
+}
+ .SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{
+  border-top-color:var(--spin-view-default-border-color, #5282FF);
+  border-left-color:var(--spin-view-default-border-color, #5282FF);
+}
+
+@keyframes islands-spin{
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+</style><style>.smart-captcha{
+  min-width:300px;
+  height:102px;
+}
+
+.smart-captcha_invisible{
+  height:0;
+}
+</style><link rel="prefetch" as="script" href="https://smartcaptcha.yandexcloud.net/shield.99cae02f31149fbbaa53.chunk.js"><script src="https://www.google.com/recaptcha/api.js?render=6LdI074UAAAAAFV8E3_eNoMTcGHeXysP39vmbL8x"></script><style>@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-light.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-light.woff) format('woff');font-weight:300;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-regular.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-regular.woff) format('woff');font-weight:400;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-medium.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-medium.woff) format('woff');font-weight:500;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-bold.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-bold.woff) format('woff');font-weight:700;font-style:normal;font-stretch:normal}.font_loaded body{font-family:'YS Text','Helvetica Neue',Arial,sans-serif;-webkit-font-feature-settings:'liga','kern';-moz-font-feature-settings:'liga','kern';font-feature-settings:'liga','kern'}</style><style>.SmartCaptcha-Shield{
+  position:fixed;
+  box-sizing:content-box;
+
+  display:flex;
+  align-items:center;
+
+  width:120px;
+  padding:6px;
+
+  user-select:none;
+
+  color:#000;
+  border:1px solid #d9d9d9;
+  border-radius:11px;
+  background:#fff;
+  background:var(--smart-captcha-background-color, #fff);
+
+  transition-timing-function:ease-in;
+  transition-duration:0.5s;
+  transition-property:transform;
+}
+
+ .SmartCaptcha-Shield{
+  color:var(--color-typo-primary, #000);
+  color:var(--color-typo-primary, #000);
+}
+
+.SmartCaptcha-Shield-Anchor{
+  display:flex;
+  align-items:center;
+
+  width:20px;
+  height:20px;
+}
+
+ .SmartCaptcha-Shield-Anchor{
+  background:var(--color-typo-primary, #000);
+  background:var(--color-typo-primary, #000);
+}
+
+.SmartCaptcha-Shield_position_left .SmartCaptcha-Shield-Anchor{
+  margin-left:10px;
+}
+
+.SmartCaptcha-Shield:not(.SmartCaptcha-Shield_visible){
+  cursor:pointer;
+}
+
+.SmartCaptcha-Shield > :focus-visible{
+  position:relative;
+
+  outline:none;
+}
+
+.SmartCaptcha-Shield > :focus-visible::after{
+  position:absolute;
+  top:-4px;
+  left:-4px;
+
+  width:calc(100% + 4px);
+  height:calc(100% + 4px);
+
+  content:'';
+
+  border:2px solid rgb(250, 192, 0);
+  border-radius:4px;
+}
+
+.SmartCaptcha-Shield-PrivacyLink{
+  width:63px;
+
+  font-family:'YS Text';
+  font-size:10px;
+  font-weight:400;
+  line-height:11px;
+  cursor:pointer;
+  text-decoration:none;
+
+  color:inherit;
+  opacity:0.7;
+}
+
+.SmartCaptcha-Shield_position_right .SmartCaptcha-Shield-PrivacyLink{
+  margin:0 10px;
+}
+
+.SmartCaptcha-Shield .SmartCaptcha-Shield-CloseButton{
+  padding:0;
+
+  cursor:pointer;
+  color:inherit;
+
+  border:none;
+  background:none;
+}
+
+.SmartCaptcha-Shield_position_left .SmartCaptcha-Shield-CloseButton{
+  margin-right:9px;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_top{
+  top:25%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_center{
+  top:50%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_bottom{
+  bottom:25%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_left{
+  left:-100px;
+
+  flex-direction:row-reverse;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_right{
+  right:-100px;
+
+  flex-direction:row;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_visible.SmartCaptcha-Shield_position_left{
+  transform:translateX(90px);
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_visible.SmartCaptcha-Shield_position_right{
+  transform:translateX(-90px);
+}
+</style><style>@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-light.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-light.woff) format('woff');font-weight:300;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-regular.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-regular.woff) format('woff');font-weight:400;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-medium.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-medium.woff) format('woff');font-weight:500;font-style:normal;font-stretch:normal}@font-face{font-family:'YS Text';src:url(//yastatic.net/s3/home/fonts/ys/1/text-bold.woff2) format('woff2'),url(//yastatic.net/s3/home/fonts/ys/1/text-bold.woff) format('woff');font-weight:700;font-style:normal;font-stretch:normal}.font_loaded body{font-family:'YS Text','Helvetica Neue',Arial,sans-serif;-webkit-font-feature-settings:'liga','kern';-moz-font-feature-settings:'liga','kern';font-feature-settings:'liga','kern'}</style><style>.SmartCaptcha-Shield{
+  position:fixed;
+  box-sizing:content-box;
+
+  display:flex;
+  align-items:center;
+
+  width:120px;
+  padding:6px;
+
+  user-select:none;
+
+  color:#000;
+  border:1px solid #d9d9d9;
+  border-radius:11px;
+  background:#fff;
+  background:var(--smart-captcha-background-color, #fff);
+
+  transition-timing-function:ease-in;
+  transition-duration:0.5s;
+  transition-property:transform;
+}
+
+ .SmartCaptcha-Shield{
+  color:var(--color-typo-primary, #000);
+  color:var(--color-typo-primary, #000);
+}
+
+.SmartCaptcha-Shield-Anchor{
+  display:flex;
+  align-items:center;
+
+  width:20px;
+  height:20px;
+}
+
+ .SmartCaptcha-Shield-Anchor{
+  background:var(--color-typo-primary, #000);
+  background:var(--color-typo-primary, #000);
+}
+
+.SmartCaptcha-Shield_position_left .SmartCaptcha-Shield-Anchor{
+  margin-left:10px;
+}
+
+.SmartCaptcha-Shield:not(.SmartCaptcha-Shield_visible){
+  cursor:pointer;
+}
+
+.SmartCaptcha-Shield > :focus-visible{
+  position:relative;
+
+  outline:none;
+}
+
+.SmartCaptcha-Shield > :focus-visible::after{
+  position:absolute;
+  top:-4px;
+  left:-4px;
+
+  width:calc(100% + 4px);
+  height:calc(100% + 4px);
+
+  content:'';
+
+  border:2px solid rgb(250, 192, 0);
+  border-radius:4px;
+}
+
+.SmartCaptcha-Shield-PrivacyLink{
+  width:63px;
+
+  font-family:'YS Text';
+  font-size:10px;
+  font-weight:400;
+  line-height:11px;
+  cursor:pointer;
+  text-decoration:none;
+
+  color:inherit;
+  opacity:0.7;
+}
+
+.SmartCaptcha-Shield_position_right .SmartCaptcha-Shield-PrivacyLink{
+  margin:0 10px;
+}
+
+.SmartCaptcha-Shield .SmartCaptcha-Shield-CloseButton{
+  padding:0;
+
+  cursor:pointer;
+  color:inherit;
+
+  border:none;
+  background:none;
+}
+
+.SmartCaptcha-Shield_position_left .SmartCaptcha-Shield-CloseButton{
+  margin-right:9px;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_top{
+  top:25%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_center{
+  top:50%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_bottom{
+  bottom:25%;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_left{
+  left:-100px;
+
+  flex-direction:row-reverse;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_position_right{
+  right:-100px;
+
+  flex-direction:row;
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_visible.SmartCaptcha-Shield_position_left{
+  transform:translateX(90px);
+}
+
+.SmartCaptcha-Shield.SmartCaptcha-Shield_visible.SmartCaptcha-Shield_position_right{
+  transform:translateX(-90px);
+}
+</style></head> <body> <div id="root"><main class="makeStylesmain-0-1-1"><div class="makeStylesmainWrapper-0-1-2"><section class="makeStylesmainSection-0-1-3 makeStylescontainer-0-1-4"><div class="Toastify"></div><div class="makeStylescontainer-0-1-7 makeStylescontainer-0-1-12"><div class="makeStyleswrapper-0-1-8"><header class="makeStylesheader-0-1-9"><a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" href="/Account/classic"><img src="/static/astral-logo.4c4023536a3ff4aa7285.svg" class="makeStyleslogo-0-1-11" alt="Логотип ГК &quot;Астрал&quot;"></a></header><div class="makeStylescontent-0-1-10"><div class="makeStylescontainer-0-1-6"><h1 class="MuiTypographyroot-0-1-19 makeStylesmainTitle-0-1-49 MuiTypographyh2-0-1-25">Вход в Личный кабинет</h1><div class="makeStylescontent-0-1-50"><form class="MuiBoxroot-0-1-52 MuiBoxroot-0-1-53" novalidate=""><div class="MuiCollapsecontainer-0-1-57 makeStylescontainer-0-1-54 makeStylescontainer-0-1-56 MuiCollapsehidden-0-1-59" style="min-height: 0px;"><div class="MuiCollapsewrapper-0-1-60"><div class="MuiCollapsewrapperInner-0-1-61"><ul class="makeStyleslist-0-1-55"></ul></div></div></div><div class="makeStylesfield-0-1-63"><div class="makeStylessubTitle-0-1-64"><a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiButtonBaseroot-0-1-65 makeStylesbutton-0-1-62 MuiTypographycolorPrimary-0-1-42" tabindex="0" role="button" aria-disabled="false" data-test="authLoginTypeToggle">По email</a></div><div class="MuiFormControlroot-0-1-69 MuiTextFieldroot-0-1-68 MuiFormControlfullWidth-0-1-72" meta="[object Object]"><label class="MuiFormLabelroot-0-1-85 MuiInputLabelroot-0-1-73 MuiInputLabelformControl-0-1-79 MuiInputLabelanimated-0-1-82 MuiInputLabelshrink-0-1-81 MuiInputLabeloutlined-0-1-84 MuiFormLabelfilled-0-1-90 MuiFormLabelrequired-0-1-91 MuiInputLabelrequired-0-1-77" data-shrink="true">Телефон<span aria-hidden="true" class="MuiFormLabelasterisk-0-1-92 MuiInputLabelasterisk-0-1-78"> *</span></label><div class="MuiInputBaseroot-0-1-108 MuiOutlinedInputroot-0-1-93 MuiInputBasefullWidth-0-1-118 MuiInputBaseformControl-0-1-109"><input aria-invalid="false" autocomplete="tel" name="phone" required="" type="text" class="MuiInputBaseinput-0-1-119 MuiOutlinedInputinput-0-1-103" value="+7 (937) 643-65-56"><fieldset aria-hidden="true" class="PrivateNotchedOutlineroot-0-1-126 MuiOutlinedInputnotchedOutline-0-1-102"><legend class="PrivateNotchedOutlinelegendLabelled-0-1-128 PrivateNotchedOutlinelegendNotched-0-1-129"><span>Телефон&nbsp;*</span></legend></fieldset></div></div></div><div class="makeStylesfield-0-1-63"><div class="makeStylessubTitle-0-1-64"><span class="MuiTypographyroot-0-1-19 makeStyleswarning-0-1-130 MuiTypographybody1-0-1-21"></span></div><div class="MuiFormControlroot-0-1-69 MuiTextFieldroot-0-1-68 MuiFormControlfullWidth-0-1-72"><label class="MuiFormLabelroot-0-1-85 MuiInputLabelroot-0-1-73 MuiInputLabelformControl-0-1-79 MuiInputLabelanimated-0-1-82 MuiInputLabelshrink-0-1-81 MuiInputLabeloutlined-0-1-84 MuiFormLabelfilled-0-1-90" data-shrink="true">Пароль</label><div class="MuiInputBaseroot-0-1-108 MuiOutlinedInputroot-0-1-93 MuiInputBasefullWidth-0-1-118 MuiInputBaseformControl-0-1-109 MuiInputBaseadornedEnd-0-1-113 MuiOutlinedInputadornedEnd-0-1-98"><input aria-invalid="false" autocomplete="current-password" name="password" required="" type="password" class="MuiInputBaseinput-0-1-119 MuiOutlinedInputinput-0-1-103 MuiInputBaseinputAdornedEnd-0-1-124 MuiOutlinedInputinputAdornedEnd-0-1-107" value="0987654321Aa1!"><button class="MuiButtonBaseroot-0-1-65 MuiIconButtonroot-0-1-131 MuiIconButtonsizeSmall-0-1-138" tabindex="0" type="button"><span class="MuiIconButtonlabel-0-1-139"><svg class="MuiSvgIconroot-0-1-140" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg></span><span class="MuiTouchRippleroot-0-1-237"></span></button><fieldset aria-hidden="true" class="PrivateNotchedOutlineroot-0-1-126 MuiOutlinedInputnotchedOutline-0-1-102"><legend class="PrivateNotchedOutlinelegendLabelled-0-1-128 PrivateNotchedOutlinelegendNotched-0-1-129"><span>Пароль</span></legend></fieldset></div></div></div><div><div class="makeStylessubmitButtonWrap-0-1-149"><button class="MuiButtonBaseroot-0-1-65 MuiButtonroot-0-1-169 Buttonroot-0-1-153 ButtonrootLoading-0-1-154 ButtonrootMedium-0-1-158 ButtonrootRegular-0-1-160 ButtonrootRegularLoading-0-1-161 MuiButtontext-0-1-171 makeStylessignInButton-0-1-151 makeStylessignInButton-0-1-152 MuiButtondisabled-0-1-182 Buttondisabled-0-1-165 MuiButtonBasedisabled-0-1-66" tabindex="-1" type="submit" disabled=""><span class="MuiButtonlabel-0-1-170">Войти<div class="ButtonloaderContainer-0-1-166"><div class="MuiCircularProgressroot-0-1-269 Buttonloader-0-1-168 MuiCircularProgresscolorPrimary-0-1-273 MuiCircularProgressindeterminate-0-1-271" role="progressbar" style="width: 14px; height: 14px;"><svg class="MuiCircularProgresssvg-0-1-275" viewBox="22 22 44 44"><circle class="MuiCircularProgresscircle-0-1-276 MuiCircularProgresscircleIndeterminate-0-1-278" cx="44" cy="44" r="21" fill="none" stroke-width="2"></circle></svg></div></div></span></button><span class="MuiTypographyroot-0-1-19 makeStylessignInText-0-1-150 MuiTypographybody1-0-1-21 MuiTypographycolorTextSecondary-0-1-45">Нет аккаунта?</span><a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" data-test="linkToSignUpPage" href="/signUp/main/classic">Регистрация</a></div></div></form></div><p class="MuiTypographyroot-0-1-19 makeStyleslicenseText-0-1-198 MuiTypographybody1-0-1-21">Нажимая «Войти», пользователь соглашается с<a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" href="/Docs/LicenseAgreement.pdf" target="_blank">Пользовательским соглашением</a>и<a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" href="/Docs/SingleConsentToTheProcessingOfPersonalData.pdf" target="_blank">Согласием на обработку персональных данных</a></p><div><p class="MuiTypographyroot-0-1-19 makeStylestitle-0-1-199 MuiTypographybody1-0-1-21">или авторизуйтесь через</p><div class="makeStylesbuttonGroup-0-1-200"><button class="MuiButtonBaseroot-0-1-65 MuiButtonroot-0-1-169 Buttonroot-0-1-153 ButtonrootMedium-0-1-158 ButtonrootOutlined-0-1-163 MuiButtontext-0-1-171 makeStylesbutton-0-1-201 makeStylesswitchAuthTypeBtn-0-1-202" tabindex="0" type="button" data-test="authMethodToggleToCertificate"><span class="MuiButtonlabel-0-1-170"><span class="MuiButtonstartIcon-0-1-193 MuiButtoniconSizeMedium-0-1-196"><svg width="19" height="20" viewBox="0 0 19 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M17.837 6.58072C17.4616 5.60053 16.7731 4.18626 15.6252 3.01496C14.4814 1.84771 13.1166 1.162 12.1731 0.792258C11.1372 0.386363 9.96018 0.642205 9.17444 1.44401L6.41335 4.26159C5.59488 5.09677 5.35898 6.3819 5.82631 7.45944C5.97123 7.79364 6.12883 8.12053 6.29723 8.43635L0.237194 14.6494C0.105324 14.7846 0.03125 14.968 0.03125 15.1592V18.3311C0.03125 18.7293 0.346038 19.052 0.734372 19.052H3.82811C4.21644 19.052 4.53123 18.7293 4.53123 18.3311V17.0335L5.79685 17.0335C6.18519 17.0335 6.49997 16.7107 6.49997 16.3126V15.015H7.76559C8.15393 15.015 8.46872 14.6923 8.46872 14.2942C8.46872 13.896 8.15393 13.5733 7.76559 13.5733H5.79685C5.40852 13.5733 5.09373 13.896 5.09373 14.2942V15.5917L3.82811 15.5917C3.43978 15.5917 3.12499 15.9145 3.12499 16.3126V17.6102H1.43749V15.4578L7.67261 9.06521C7.90168 8.83035 7.94461 8.46547 7.7766 8.18151C7.53293 7.76974 7.30909 7.32972 7.11134 6.87365C6.87934 6.33871 6.99754 5.69969 7.40546 5.28341L10.1665 2.46587C10.5607 2.06365 11.1513 1.93537 11.6711 2.13902C12.4875 2.45894 13.6641 3.04784 14.6332 4.03682C15.6083 5.03179 16.2019 6.25596 16.5282 7.10768C16.7317 7.63926 16.608 8.24319 16.213 8.64631L13.4186 11.4979C13.0116 11.9131 12.4043 12.0345 11.8711 11.8072C11.4314 11.6197 11.0056 11.3969 10.6055 11.1451C10.2746 10.9369 9.8416 11.0431 9.63847 11.3825C9.43533 11.7218 9.53894 12.1657 9.8699 12.374C10.3323 12.6649 10.8239 12.9221 11.3311 13.1384C12.3907 13.5903 13.5995 13.3474 14.4106 12.5198L17.205 9.66823C17.9976 8.85943 18.2457 7.64752 17.837 6.58072Z"></path></svg></span>Сертификат</span><span class="MuiTouchRippleroot-0-1-237"></span></button><div title="Войти через Госуслуги" class=""><span><button class="MuiButtonBaseroot-0-1-65 MuiButtonroot-0-1-169 Buttonroot-0-1-153 ButtonrootMedium-0-1-158 ButtonrootOutlined-0-1-163 MuiButtontext-0-1-171 makeStylesbutton-0-1-201 makeStylesadditionalAuthBtn-0-1-204" tabindex="0" type="button" data-test="authMethodEsiaToggleButton"><span class="MuiButtonlabel-0-1-170"><svg width="30" height="17" viewBox="0 0 30 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15.109 10.4446H11.6095C11.5738 10.4446 11.556 10.4623 11.5381 10.4978C11.4488 12.0745 11.1453 13.7576 10.7168 15.1395C10.7168 15.1573 10.7168 15.175 10.7347 15.1927C10.7525 15.2104 10.7704 15.2104 10.7882 15.2104H11.9845C12.0202 15.2104 12.0381 15.1927 12.0381 15.175C12.3773 14.112 12.6451 12.7301 12.7522 11.5608H13.8949V15.1573C13.8949 15.1927 13.9306 15.2281 13.9664 15.2281H15.109C15.1448 15.2281 15.1805 15.1927 15.1805 15.1573V10.4978C15.1805 10.4623 15.1448 10.4446 15.109 10.4446V10.4446ZM29.9105 10.4446H28.7678C28.7321 10.4446 28.6964 10.48 28.6964 10.5155V14.112C28.4464 14.1828 28.1965 14.2183 27.9108 14.2183C27.1609 14.2183 26.9824 13.988 26.9824 12.9958V10.5155C26.9824 10.48 26.9467 10.4446 26.9109 10.4446H25.7861C25.7504 10.4446 25.7147 10.48 25.7147 10.5155V13.1198C25.7147 14.7498 26.2682 15.3699 27.6787 15.3699C28.4822 15.3699 29.3927 15.1573 29.9284 14.9624C29.9462 14.9447 29.9641 14.9269 29.9641 14.9092V10.5155C29.9819 10.4623 29.9462 10.4446 29.9105 10.4446V10.4446ZM5.69966 10.4446H4.53911C4.50341 10.4446 4.48555 10.4623 4.48555 10.4978C4.30701 11.2064 3.93206 12.4112 3.43213 13.6691L2.27158 10.4978C2.25372 10.48 2.23587 10.4623 2.21802 10.4623H1.03961C1.02176 10.4623 1.0039 10.48 0.986047 10.4978C0.968193 10.5155 0.968193 10.5332 0.986047 10.5509L2.7358 15.299C2.55725 15.671 2.39656 15.9722 2.23587 16.2557C2.11089 16.4683 2.00376 16.6809 1.89663 16.8935C1.87878 16.9112 1.87878 16.9289 1.89663 16.9466C1.91449 16.9644 1.93234 16.9821 1.9502 16.9821H3.21787C3.23573 16.9821 3.27144 16.9644 3.27144 16.9466C3.48569 16.5392 3.75351 15.9722 4.00348 15.3876C4.75337 13.6513 5.34257 12.0214 5.78894 10.5332C5.78894 10.5155 5.78894 10.4978 5.77108 10.48C5.73537 10.4446 5.71752 10.4446 5.69966 10.4446V10.4446ZM9.85979 14.112C9.85979 14.0943 9.84193 14.0765 9.82408 14.0765H9.77052C9.48484 14.1828 8.96706 14.2537 8.60997 14.2537C7.80651 14.2537 7.43156 14.0411 7.43156 12.8364C7.43156 11.8619 7.55654 11.419 8.60997 11.419C8.91349 11.419 9.18131 11.4545 9.53841 11.5608C9.57412 11.5608 9.59197 11.5608 9.60982 11.5253C9.73481 11.2773 9.8955 10.9761 10.074 10.6041V10.5509C10.074 10.5332 10.0562 10.5155 10.0383 10.5155C9.57411 10.3737 9.02062 10.2852 8.52069 10.2852C6.86021 10.2852 6.11032 11.0647 6.11032 12.8186C6.11032 14.5903 6.86021 15.3876 8.52069 15.3876C8.93135 15.3876 9.77052 15.299 10.1633 15.1395C10.199 15.1218 10.2169 15.0864 10.199 15.051L9.85979 14.112V14.112ZM20.7332 10.4446H19.5727C19.537 10.4446 19.5191 10.4623 19.5191 10.4978C19.3406 11.2241 18.9656 12.4112 18.4657 13.6691L17.3052 10.4978C17.2873 10.48 17.2695 10.4623 17.2516 10.4623H16.0732C16.0553 10.4623 16.0375 10.48 16.0196 10.4978C16.0018 10.5155 16.0018 10.5332 16.0196 10.5509L17.7694 15.299C17.5908 15.671 17.4301 15.9722 17.2695 16.2557C17.1445 16.4683 17.0373 16.6809 16.9302 16.9112C16.9124 16.9289 16.9124 16.9466 16.9302 16.9644C16.9481 16.9821 16.9659 16.9998 16.9838 16.9998H18.2515C18.2693 16.9998 18.305 16.9821 18.305 16.9644C18.5193 16.5569 18.7871 15.9899 19.0371 15.4053C19.7691 13.6691 20.3762 12.0391 20.8225 10.5509C20.8225 10.5332 20.8225 10.5155 20.8047 10.4978C20.769 10.4446 20.7511 10.4446 20.7332 10.4446V10.4446ZM25.0184 10.4446H21.6438C21.6081 10.4446 21.5724 10.48 21.5724 10.5155V15.175C21.5724 15.2104 21.6081 15.2458 21.6438 15.2458H22.7865C22.8222 15.2458 22.8579 15.2104 22.8579 15.175V11.5785H24.6256C24.6434 11.5785 24.6791 11.5608 24.6791 11.543C24.822 11.2241 24.9469 10.8875 25.0898 10.5509V10.4978C25.0541 10.4446 25.0362 10.4446 25.0184 10.4446" fill="#EF4058"></path><path d="M10.8452 0.0573514C8.18061 0.0573514 7.13793 1.2044 7.13793 4.10068C7.13793 7.05432 8.18061 8.20137 10.8452 8.20137C13.5388 8.20137 14.5815 7.05432 14.5815 4.10068C14.5815 1.17572 13.5388 0.0573514 10.8452 0.0573514ZM10.8452 6.50948C9.62878 6.50948 9.25225 6.19404 9.25225 4.12936C9.25225 1.94997 9.65774 1.74924 10.8452 1.74924C12.0617 1.74924 12.4672 1.94997 12.4672 4.12936C12.4672 6.19404 12.0907 6.50948 10.8452 6.50948ZM21.9961 6.19404C21.9961 6.16537 21.9671 6.13669 21.9382 6.13669H21.8513C21.3879 6.30875 20.5479 6.42345 19.9687 6.42345C18.6653 6.42345 18.0571 6.07934 18.0571 4.12936C18.0571 2.55217 18.2598 1.83527 19.9687 1.83527C20.461 1.83527 20.8955 1.89262 21.4748 2.06468C21.5327 2.06468 21.5617 2.06468 21.5906 2.00733C21.7934 1.60586 22.054 1.11837 22.3437 0.516169V0.430142C22.3437 0.401466 22.3147 0.372788 22.2857 0.372788C21.5327 0.143379 20.6348 0 19.8239 0C17.1303 0 15.9138 1.26175 15.9138 4.10068C15.9138 6.9683 17.1303 8.25872 19.8239 8.25872C20.49 8.25872 21.8513 8.11534 22.4885 7.85726C22.5464 7.82858 22.5754 7.77123 22.5464 7.71388L21.9961 6.19404V6.19404ZM6.55867 0.258083H1.0846C1.02668 0.258083 0.96875 0.315436 0.96875 0.372788V7.91461C0.96875 7.97196 1.02668 8.02931 1.0846 8.02931H2.93825C2.99618 8.02931 3.05411 7.97196 3.05411 7.91461V2.06468H5.89251C5.92147 2.06468 5.9794 2.036 5.9794 2.00733C6.21111 1.49116 6.41385 0.94631 6.64556 0.401464V0.315437C6.61659 0.286761 6.58763 0.258083 6.55867 0.258083Z" fill="#1466AC"></path></svg></span><span class="MuiTouchRippleroot-0-1-237"></span></button></span></div><div title="Войти через Telegram" class=""><span><button class="MuiButtonBaseroot-0-1-65 MuiButtonroot-0-1-169 Buttonroot-0-1-153 ButtonrootMedium-0-1-158 ButtonrootOutlined-0-1-163 MuiButtontext-0-1-171 makeStylesbutton-0-1-201 makeStylesadditionalAuthBtn-0-1-204" tabindex="0" type="button" data-test="telegramAuth"><span class="MuiButtonlabel-0-1-170"><div class="makeStylesiframeContainer-0-1-217"><iframe id="telegram-login-IdentityAstralBot" src="https://oauth.telegram.org/embed/IdentityAstralBot?origin=https%3A%2F%2Fidentity.astral.ru&amp;return_to=https%3A%2F%2Fidentity.astral.ru%2FAccount%2Fclassic&amp;size=large&amp;userpic=false&amp;request_access=true&amp;radius=0&amp;lang=ru" width="238" height="40" frameborder="0" scrolling="no" style="overflow: hidden; color-scheme: light dark; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 40px; width: 234px;"></iframe><script src="https://telegram.org/js/telegram-widget.js?19" data-telegram-login="IdentityAstralBot" data-size="large" data-radius="0" data-request-access="true" data-userpic="false" data-lang="ru" data-onauth="TelegramLoginWidget.onAuth(user)" async=""></script></div><svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14 28C21.732 28 28 21.732 28 14C28 6.26802 21.732 0 14 0C6.26802 0 0 6.26802 0 14C0 21.732 6.26802 28 14 28Z" fill="#34AADF"></path><path d="M5.82581 13.8785C5.82581 13.8785 12.8258 11.0057 15.2535 9.99415C16.1842 9.58955 19.3402 8.29472 19.3402 8.29472C19.3402 8.29472 20.7969 7.72828 20.6755 9.10398C20.635 9.67047 20.3113 11.6531 19.9876 13.7976C19.5021 16.8323 18.9761 20.1502 18.9761 20.1502C18.9761 20.1502 18.8951 21.0809 18.2073 21.2427C17.5194 21.4045 16.3865 20.6763 16.1842 20.5144C16.0223 20.393 13.1495 18.5722 12.0975 17.682C11.8142 17.4392 11.4905 16.9537 12.1379 16.3872C13.5946 15.052 15.3344 13.393 16.3865 12.341C16.872 11.8554 17.3576 10.7225 15.3344 12.0982C12.4616 14.0809 9.62927 15.9421 9.62927 15.9421C9.62927 15.9421 8.98186 16.3467 7.768 15.9826C6.55409 15.6185 5.1379 15.1329 5.1379 15.1329C5.1379 15.1329 4.16686 14.526 5.82581 13.8785Z" fill="#fff"></path></svg></span><span class="MuiTouchRippleroot-0-1-237"></span></button></span></div></div></div><div class="makeStyleslinkContainer-0-1-51"><a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" href="/setPassword/phone">У меня есть код</a><a class="MuiTypographyroot-0-1-19 MuiLinkroot-0-1-13 MuiLinkunderlineAlways-0-1-16 MuiTypographycolorPrimary-0-1-42" data-test="lintToRecoveryPasswordPage" href="/recoveryPassword">Забыли пароль?</a></div></div></div></div></div><footer class="makeStylesfooter-0-1-218"><div class="makeStylesfooterWrapper-0-1-219"><p class="makeStylescopyright-0-1-220">ГК «Астрал», 2026</p><a href="https://astral.ru/contacts/" target="_blank" rel="noopener noreferrer" class="makeStylescontactLink-0-1-221">Помощь</a></div></footer></section><section class="makeStylesadvertisingContainer-0-1-247 makeStylesmainSection-0-1-3"><div class="slick-slider makeStylessliderContainer-0-1-248 slick-initialized" dir="ltr"><div class="slick-list"><div class="slick-track" style="width: 4480px; opacity: 1; transform: translate3d(-1280px, 0px, 0px);"><div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 640px;"><div><img src="https://identity.astral.ru/api/Files/4a34ef32-d828-43a1-b2fa-08142347e536" alt="Доки" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="0" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 640px;"><div><img src="https://identity.astral.ru/api/Files/cba602e4-ed46-4780-8c5c-61477e5557b6" alt="Баннер КриптоПро" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="1" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: none; width: 640px;"><div><img src="https://identity.astral.ru/api/Files/fb92a9f3-c23c-4151-b1aa-659282d80c04" alt="Баннер ЛК" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width: 640px;"><div><img src="https://identity.astral.ru/api/Files/4a34ef32-d828-43a1-b2fa-08142347e536" alt="Доки" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="3" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 640px;"><div><img src="https://identity.astral.ru/api/Files/cba602e4-ed46-4780-8c5c-61477e5557b6" alt="Баннер КриптоПро" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="4" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 640px;"><div><img src="https://identity.astral.ru/api/Files/fb92a9f3-c23c-4151-b1aa-659282d80c04" alt="Баннер ЛК" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div><div data-index="5" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 640px;"><div><img src="https://identity.astral.ru/api/Files/4a34ef32-d828-43a1-b2fa-08142347e536" alt="Доки" class="makeStylesslideImg-0-1-250" tabindex="-1" style="width: 100%; display: inline-block;"></div></div></div></div><footer class="slick-dots makeStylespanel-0-1-266"><a class="MuiButtonBaseroot-0-1-65 MuiButtonroot-0-1-169 Buttonroot-0-1-153 ButtonrootMedium-0-1-158 MuiButtontext-0-1-171 makeStylestryLink-0-1-267" tabindex="0" aria-disabled="false" href="https://personarea.astral.ru/" target="_blank" rel="noopener noreferrer"><span class="MuiButtonlabel-0-1-170">Подробнее</span><span class="MuiTouchRippleroot-0-1-237"></span></a><ul class="makeStyleslist-0-1-268"><li class=""><button>1</button></li><li class="slick-active"><button>2</button></li><li class=""><button>3</button></li></ul></footer></div></section></div></main></div> <script type="text/javascript"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+          ym('67770094', "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+          }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/67770094" style="position:absolute; left:-9999px;" alt=""></div></noscript>   <div class="smart-captcha_invisible" data-testid="smartCaptcha-container"><div style="display: none;"><iframe frameborder="0" src="https://smartcaptcha.yandexcloud.net/backend.d9627726d03678c949b5.html?sitekey=ysc1_dMJJXAgUCJguXtZpRU8wbAdO9bRrBxUNfOwvwtSRb7c95f05&amp;theme=light&amp;hl=ru&amp;host=identity.astral.ru&amp;href=https%3A%2F%2Fidentity.astral.ru%2FAccount%2Fclassic&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false" allow="encrypted-media *; accelerometer" data-testid="backend-iframe" title="SmartCaptcha backend" aria-hidden="true" style="display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></iframe></div><input type="hidden" name="smart-token" data-testid="smart-token"></div><div class="SmartCaptcha-Overlay SmartCaptcha-Overlay_show_spinner" data-testid="advanced-container" tabindex="-1" style="--smart-captcha-doc-height: 720px; --smart-captcha-doc-width: 1280px;"><div class="SmartCaptcha-Spin"></div><iframe frameborder="0" src="https://smartcaptcha.yandexcloud.net/advanced.ru.bb01fbaa69273bb18ded.html?sitekey=ysc1_dMJJXAgUCJguXtZpRU8wbAdO9bRrBxUNfOwvwtSRb7c95f05&amp;theme=light&amp;hl=ru&amp;host=identity.astral.ru&amp;href=https%3A%2F%2Fidentity.astral.ru%2FAccount%2Fclassic&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false" allow="encrypted-media *; accelerometer" data-testid="advanced-iframe" title="SmartCaptcha advanced" style="display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></iframe></div><div class="smart-captcha_invisible" data-testid="smartCaptcha-container"><div style="display: none;"><iframe frameborder="0" src="https://smartcaptcha.yandexcloud.net/backend.d9627726d03678c949b5.html?sitekey=ysc1_dMJJXAgUCJguXtZpRU8wbAdO9bRrBxUNfOwvwtSRb7c95f05&amp;theme=light&amp;hl=ru&amp;host=identity.astral.ru&amp;href=https%3A%2F%2Fidentity.astral.ru%2FAccount%2Fclassic&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false" allow="encrypted-media *; accelerometer" data-testid="backend-iframe" title="SmartCaptcha backend" aria-hidden="true" style="display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></iframe></div><input type="hidden" name="smart-token" data-testid="smart-token"></div><div class="SmartCaptcha-Overlay SmartCaptcha-Overlay_show_spinner" data-testid="advanced-container" tabindex="-1" style="--smart-captcha-doc-height: 720px; --smart-captcha-doc-width: 1280px;"><div class="SmartCaptcha-Spin"></div><iframe frameborder="0" src="https://smartcaptcha.yandexcloud.net/advanced.ru.bb01fbaa69273bb18ded.html?sitekey=ysc1_dMJJXAgUCJguXtZpRU8wbAdO9bRrBxUNfOwvwtSRb7c95f05&amp;theme=light&amp;hl=ru&amp;host=identity.astral.ru&amp;href=https%3A%2F%2Fidentity.astral.ru%2FAccount%2Fclassic&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false" allow="encrypted-media *; accelerometer" data-testid="advanced-iframe" title="SmartCaptcha advanced" style="display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);"></iframe></div></body></html>

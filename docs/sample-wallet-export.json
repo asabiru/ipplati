@@ -1,0 +1,40 @@
+[
+  {
+    "external_id": "wallet-1001",
+    "expected_fiat_amount": "15000.00",
+    "fiat_currency": "RUB",
+    "counterparty_name": "Ivan Petrov",
+    "counterparty_wallet_id": "u_7788",
+    "payment_method": "Sberbank",
+    "opened_at": "2026-05-05T09:15:00Z",
+    "completed_at": null,
+    "status": "paid",
+    "notes": "Captured from Wallet UI",
+    "captured_at": "2026-05-05T09:18:42Z",
+    "raw_payload": {
+      "crypto_amount": "145.34",
+      "crypto_asset": "USDT",
+      "rate": "103.20",
+      "screenshot_path": "artifacts/2026-05-05/wallet-1001.png"
+    }
+  },
+  {
+    "external_id": "wallet-1002",
+    "expected_fiat_amount": "8700.00",
+    "fiat_currency": "RUB",
+    "counterparty_name": "Third Party Sender",
+    "counterparty_wallet_id": "u_9911",
+    "payment_method": "Sberbank",
+    "opened_at": "2026-05-05T10:00:00Z",
+    "completed_at": null,
+    "status": "disputed",
+    "notes": "Potential third-party payment",
+    "captured_at": "2026-05-05T10:03:17Z",
+    "raw_payload": {
+      "crypto_amount": "84.30",
+      "crypto_asset": "USDT",
+      "rate": "103.20",
+      "screenshot_path": "artifacts/2026-05-05/wallet-1002.png"
+    }
+  }
+]

@@ -1,0 +1,3 @@
+Operation Id,Date,Amount,Currency,Direction,Payer,Description,Related Deal ID,Return Reason
+SBER-IN-001,2026-05-05T10:15:00Z,12500.00,RUB,incoming,Ivan Petrov,Payment for P2P deal,OS-TQEI5ERXB4,
+SBER-OUT-001,2026-05-05T11:30:00Z,12500.00,RUB,outgoing,IP Account,Return for disputed deal,OS-TQEI5ERXB4,third_party_payment

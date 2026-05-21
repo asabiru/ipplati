@@ -1,0 +1,8 @@
+Control Identifiers:
+
+Dialog - 'TelegramDesktop'    (L1513, T911, R1913, B1011)
+['Dialog', 'TelegramDesktopDialog', 'TelegramDesktop']
+child_window(title="TelegramDesktop", control_type="Window")
+   | 
+   | Button - ''    (L1875, T913, R1912, B950)
+   | ['Button']
