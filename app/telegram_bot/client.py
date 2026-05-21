@@ -90,6 +90,26 @@ class TelegramBotApi:
             raise RuntimeError(f"Telegram answerCallbackQuery failed: {payload}")
         return payload
 
+    def send_document(
+        self,
+        chat_id: int,
+        document: bytes,
+        filename: str,
+        caption: str | None = None,
+    ) -> dict:
+        files = {"document": (filename, document, "application/octet-stream")}
+        data: dict[str, str | int] = {"chat_id": chat_id}
+        if caption:
+            data["caption"] = caption
+            data["parse_mode"] = "HTML"
+        with httpx.Client(timeout=self.timeout_seconds) as client:
+            response = client.post(f"{self.base_url}/sendDocument", data=data, files=files)
+        response.raise_for_status()
+        payload = response.json()
+        if not payload.get("ok"):
+            raise RuntimeError(f"Telegram sendDocument failed: {payload}")
+        return payload
+
     def get_file(self, file_id: str) -> dict:
         with httpx.Client(timeout=self.timeout_seconds) as client:
             response = client.get(f"{self.base_url}/getFile", params={"file_id": file_id})
