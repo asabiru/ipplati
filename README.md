@@ -283,6 +283,50 @@ SYNC_OFD_PATTERN=ofd-*.csv
 
 Для автоматического обмена `code -> tokens` нужно заполнить `SBER_CLIENT_SECRET` и `SBER_STATE_SECRET` в `.env`.
 
+## Alfa-Bank API
+
+Интеграция с Альфа-Банком для получения выписок по расчётному счету. Поддерживает два режима авторизации:
+
+1. **API Key** — простой режим, один заголовок `Authorization: ApiKey {key}`
+2. **OAuth2 Authorization Code Flow** — аналогично Сберу
+
+### Endpoints
+
+- `GET /alfa/status` — статус подключения к Альфа-Банку
+- `GET /alfa/connect` — начать OAuth авторизацию
+- `GET /alfa/callback` — callback для OAuth
+- `POST /alfa/refresh` — обновить токен
+- `POST /alfa/statements/pull` — получить выписку за период
+
+### Настройка
+
+Переменные в `.env`:
+
+```env
+ALFA_CLIENT_ID=ваш_client_id
+ALFA_CLIENT_SECRET=ваш_client_secret
+ALFA_API_KEY=ваш_api_key
+ALFA_REDIRECT_URI=https://api.wabcrm.ru/alfa/callback
+ALFA_DEFAULT_ACCOUNT_NUMBER=номер_расчетного_счета
+ALFA_STATE_SECRET=секрет_для_state
+ALFA_VERIFY_TLS=true
+ALFA_TLS_CERT_PATH=certs/alfa/cert.pem
+ALFA_TLS_KEY_PATH=certs/alfa/key.pem
+ALFA_AUTO_SYNC_ENABLED=false
+```
+
+### Подключение
+
+1. Подпишите договор на ИТВ (бесплатно, alfa_api@alfabank.ru)
+2. Создайте интеграцию на [Портале разработчика](https://developers.alfabank.ru)
+3. Выпустите TLS-сертификат по инструкции Альфа-Банка
+4. Заполните переменные в `.env`
+5. Установите `ALFA_AUTO_SYNC_ENABLED=true` для автоматической синхронизации
+
+### CSV-импорт
+
+Для ручного импорта выписок из Альфа-Онлайн в CSV формате используется адаптер `app/sync/adapters/alfa_csv.py`.
+
 ## OFD Playwright Reader
 
 Для `Астрал.ОФД` добавлен отдельный reader на `Playwright`, который:

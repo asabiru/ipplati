@@ -140,3 +140,19 @@ class SberToken(Base):
     obtained_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     raw_payload: Mapped[dict] = mapped_column(JSON, default=dict)
+
+
+class AlfaToken(Base):
+    __tablename__ = "alfa_tokens"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    subject: Mapped[str | None] = mapped_column(String(255), nullable=True, index=True)
+    access_token: Mapped[str] = mapped_column(String, nullable=False)
+    refresh_token: Mapped[str | None] = mapped_column(String, nullable=True)
+    id_token: Mapped[str | None] = mapped_column(String, nullable=True)
+    token_type: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    scope: Mapped[str | None] = mapped_column(String, nullable=True)
+    expires_in_minutes: Mapped[int | None] = mapped_column(nullable=True)
+    obtained_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    raw_payload: Mapped[dict] = mapped_column(JSON, default=dict)

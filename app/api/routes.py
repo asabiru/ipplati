@@ -21,6 +21,13 @@ from app.schemas import (
     TelegramDashboardSnapshot,
     WalletDealBatchIn,
 )
+from app.schemas_alfa import (
+    AlfaCallbackPayload,
+    AlfaStatementPullIn,
+    AlfaStatementPullOut,
+    AlfaStatusOut,
+    AlfaTokenOut,
+)
 from app.schemas_sber import (
     SberCallbackPayload,
     SberStatementPullIn,
@@ -29,6 +36,16 @@ from app.schemas_sber import (
     SberTokenOut,
     SberUserInfoOut,
 )
+from app.services.alfa_auth import (
+    build_authorization_url as alfa_build_authorization_url,
+    exchange_authorization_code as alfa_exchange_authorization_code,
+    get_current_token as alfa_get_current_token,
+    import_statement_transactions as alfa_import_statement_transactions,
+    import_statement_transactions_range as alfa_import_statement_transactions_range,
+    refresh_access_token as alfa_refresh_access_token,
+    verify_state as alfa_verify_state,
+)
+from app.services.alfa_auto_sync import auto_sync_recent_alfa
 from app.services.classification import classify_all_deals, classify_deal_status, link_bank_return_transactions
 from app.services.auto_sync import auto_sync_recent_sber
 from app.services.matching import run_matching
@@ -265,7 +282,7 @@ def import_bank_transactions(
             session.add(transaction)
             imported += 1
 
-        transaction.provider = "sber"
+        transaction.provider = payload.provider
         transaction.amount = incoming.amount
         transaction.currency = incoming.currency
         transaction.direction = incoming.direction
@@ -451,11 +468,174 @@ def dashboard_snapshot(
     try:
         auto_sync_recent_sber(session, reason="dashboard")
     except Exception as exc:
-        # Reporting should stay available even if Sber is temporarily unavailable.
         print(f"[auto-sync] dashboard refresh failed: {exc}")
+    try:
+        auto_sync_recent_alfa(session, reason="dashboard")
+    except Exception as exc:
+        print(f"[alfa-auto-sync] dashboard refresh failed: {exc}")
     return build_dashboard_snapshot(
         session,
         recent_deals_limit=recent_deals_limit,
         date_from=date_from,
         date_to=date_to,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Alfa-Bank routes
+# ---------------------------------------------------------------------------
+
+
+@router.get("/alfa/connect")
+def alfa_connect() -> RedirectResponse:
+    try:
+        auth_url = alfa_build_authorization_url()
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return RedirectResponse(auth_url)
+
+
+@router.get("/alfa/status", response_model=AlfaStatusOut)
+def alfa_status(session: Session = Depends(get_session)) -> AlfaStatusOut:
+    token = alfa_get_current_token(session)
+    token_out = None
+    if token is not None:
+        token_out = AlfaTokenOut(
+            subject=token.subject,
+            token_type=token.token_type,
+            scope=token.scope,
+            expires_at=token.expires_at.isoformat() if token.expires_at else None,
+            obtained_at=token.obtained_at.isoformat() if token.obtained_at else None,
+        )
+    return AlfaStatusOut(
+        configured=bool(settings.alfa_client_id or settings.alfa_api_key),
+        redirect_uri=settings.alfa_redirect_uri,
+        authorize_url=settings.alfa_oauth_authorize_url,
+        token_url=settings.alfa_oauth_token_url,
+        scope=settings.alfa_scope,
+        has_client_secret=bool(settings.alfa_client_secret),
+        has_api_key=bool(settings.alfa_api_key),
+        has_client_certificate=bool(settings.alfa_tls_cert_path and settings.alfa_tls_key_path),
+        token=token_out,
+    )
+
+
+@router.get("/alfa/callback")
+def alfa_callback(
+    request: Request,
+    session: Session = Depends(get_session),
+    code: str | None = Query(default=None),
+    state: str | None = Query(default=None),
+    error: str | None = Query(default=None),
+    error_description: str | None = Query(default=None),
+) -> dict:
+    payload = AlfaCallbackPayload(
+        code=code,
+        state=state,
+        error=error,
+        error_description=error_description,
+    )
+    token_info = None
+    state_valid = alfa_verify_state(state) if state else False
+    exchange_error = None
+    if code and settings.alfa_client_secret:
+        try:
+            token = alfa_exchange_authorization_code(code, session)
+            token_info = {
+                "subject": token.subject,
+                "obtained_at": token.obtained_at.astimezone(UTC).isoformat(),
+                "expires_at": token.expires_at.astimezone(UTC).isoformat() if token.expires_at else None,
+                "scope": token.scope,
+            }
+        except Exception as exc:
+            exchange_error = str(exc)
+    return {
+        "status": "received",
+        "callback_url": str(request.url),
+        "state_valid": state_valid,
+        "payload": payload.model_dump(),
+        "token": token_info,
+        "exchange_error": exchange_error,
+        "message": "Alfa callback received.",
+    }
+
+
+@router.post("/alfa/refresh")
+def alfa_refresh(session: Session = Depends(get_session)) -> dict:
+    try:
+        token = alfa_refresh_access_token(session)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return {
+        "status": "refreshed",
+        "subject": token.subject,
+        "obtained_at": token.obtained_at.isoformat(),
+        "expires_at": token.expires_at.isoformat() if token.expires_at else None,
+        "scope": token.scope,
+    }
+
+
+@router.post("/alfa/statements/pull", response_model=AlfaStatementPullOut)
+def alfa_pull_statement(
+    payload: AlfaStatementPullIn,
+    session: Session = Depends(get_session),
+) -> AlfaStatementPullOut:
+    account_number = payload.account_number or settings.alfa_default_account_number
+    if not account_number:
+        raise HTTPException(status_code=400, detail="account_number is required")
+
+    statement_date = payload.statement_date
+    date_from = payload.date_from
+    date_to = payload.date_to
+    if statement_date is None and (date_from is None or date_to is None):
+        raise HTTPException(status_code=400, detail="statement_date or date_from/date_to is required")
+    if statement_date is not None and (date_from is not None or date_to is not None):
+        raise HTTPException(status_code=400, detail="Use either statement_date or date_from/date_to")
+    if date_from and date_to and date_from > date_to:
+        raise HTTPException(status_code=400, detail="date_from must be less than or equal to date_to")
+
+    try:
+        if statement_date is not None:
+            imported, raw = alfa_import_statement_transactions(
+                session,
+                account_number=account_number,
+                statement_date=statement_date.isoformat(),
+                page=payload.page,
+            )
+            transactions = raw.get("transactions") or []
+            return AlfaStatementPullOut(
+                account_number=account_number,
+                statement_date=statement_date,
+                date_from=statement_date,
+                date_to=statement_date,
+                page=payload.page,
+                pages_processed=1,
+                days_processed=1,
+                imported=imported,
+                total_transactions=len(transactions),
+                raw=raw,
+            )
+
+        imported, total_transactions, pages_processed, raw = alfa_import_statement_transactions_range(
+            session,
+            account_number=account_number,
+            date_from=date_from,
+            date_to=date_to,
+            all_pages=payload.all_pages,
+            start_page=payload.page,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    return AlfaStatementPullOut(
+        account_number=account_number,
+        statement_date=None,
+        date_from=date_from,
+        date_to=date_to,
+        page=payload.page,
+        pages_processed=pages_processed,
+        days_processed=(date_to - date_from).days + 1 if date_from and date_to else 0,
+        imported=imported,
+        total_transactions=total_transactions,
+        raw=raw,
     )
