@@ -81,7 +81,8 @@ def _build_ssl_context() -> ssl.SSLContext | bool:
         context = ssl._create_unverified_context()
 
     if settings.alfa_tls_cert_path and settings.alfa_tls_key_path:
-        context.load_cert_chain(settings.alfa_tls_cert_path, settings.alfa_tls_key_path)
+        password = settings.alfa_tls_key_password or None
+        context.load_cert_chain(settings.alfa_tls_cert_path, settings.alfa_tls_key_path, password=password)
 
     return context
 

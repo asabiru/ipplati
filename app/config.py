@@ -43,6 +43,7 @@ class Settings(BaseSettings):
     alfa_verify_tls: bool = True
     alfa_tls_cert_path: str = ""
     alfa_tls_key_path: str = ""
+    alfa_tls_key_password: str = ""
     alfa_tls_ca_chain_path: str = ""
     alfa_auto_sync_enabled: bool = False
     alfa_auto_sync_lookback_days: int = 3
