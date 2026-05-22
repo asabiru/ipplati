@@ -41,6 +41,7 @@ class BankTransactionIn(BaseModel):
 
 class BankTransactionBatchIn(BaseModel):
     transactions: list[BankTransactionIn]
+    provider: str = "sber"
 
 
 class ReceiptIn(BaseModel):

@@ -29,6 +29,27 @@ class Settings(BaseSettings):
     sber_auto_sync_min_interval_seconds: int = 180
     sber_auto_sync_poll_interval_seconds: int = 300
 
+    # Alfa-Bank
+    alfa_client_id: str = ""
+    alfa_client_secret: str = ""
+    alfa_api_key: str = ""
+    alfa_scope: str = "transactions"
+    alfa_oauth_authorize_url: str = "https://baas.alfabank.ru/oidc/authorize"
+    alfa_oauth_token_url: str = "https://baas.alfabank.ru/oidc/token"
+    alfa_redirect_uri: str = "http://127.0.0.1:8000/alfa/callback"
+    alfa_statement_transactions_url: str = "https://baas.alfabank.ru/api/jp/v1/statement/transactions"
+    alfa_default_account_number: str = ""
+    alfa_state_secret: str = "change-me-alfa"
+    alfa_verify_tls: bool = True
+    alfa_tls_cert_path: str = ""
+    alfa_tls_key_path: str = ""
+    alfa_tls_key_password: str = ""
+    alfa_tls_ca_chain_path: str = ""
+    alfa_auto_sync_enabled: bool = False
+    alfa_auto_sync_lookback_days: int = 3
+    alfa_auto_sync_min_interval_seconds: int = 180
+    alfa_auto_sync_poll_interval_seconds: int = 300
+
     kudir_ip_name: str = "ИП Поляков Александр Александрович"
     kudir_inn: str = "631944033067"
     kudir_tax_year: int = 2026
@@ -37,7 +58,6 @@ class Settings(BaseSettings):
     kudir_expense_third_party_basis: str = "Расходы на оплату услуг третьих лиц, связанных с осуществлением посреднической деятельности"
     kudir_expense_bank_fee_basis: str = "Банковская комиссия за расчетно-кассовое обслуживание (пакет переводов физическим лицам)"
     kudir_artifacts_dir: str = "artifacts/kudir"
-
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
